@@ -1,0 +1,1 @@
+import{o as t,f as o,v as a}from"./mM8iU028.js";const n=["href"],l={__name:"ProseA",props:{href:{type:String,default:""}},setup(e){return(r,s)=>(t(),o("a",{href:e.href,target:"_blank",rel:"noopener noreferrer"},[a(r.$slots,"default")],8,n))}};export{l as default};

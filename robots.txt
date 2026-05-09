@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://munger-models.example.com/sitemap.xml

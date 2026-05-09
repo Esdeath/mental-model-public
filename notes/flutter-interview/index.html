@@ -1,0 +1,1066 @@
+<!DOCTYPE html><html  lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Flutter 中高级工程师面试题与详解｜个人笔记</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script type="text/javascript">(function(){try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})()</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=LXGW+WenKai+TC&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"><style>.shell[data-v-24a97cac]{min-height:100vh}.header[data-v-24a97cac]{backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent);height:var(--header-h);position:sticky;top:0;transition:transform .35s var(--ease-out),opacity .35s var(--ease-out);z-index:20}.header--hidden[data-v-24a97cac]{opacity:0;pointer-events:none;transform:translateY(-100%)}.header-inner[data-v-24a97cac]{gap:24px;height:100%;justify-content:space-between;margin:0 auto;max-width:var(--max-w);padding:0 var(--px)}.brand[data-v-24a97cac],.header-inner[data-v-24a97cac]{align-items:center;display:flex}.brand[data-v-24a97cac]{font-size:14px;font-weight:700;gap:10px;letter-spacing:.02em}.brand[data-v-24a97cac]:hover{color:var(--fg)}.brand-mark[data-v-24a97cac]{background:var(--fg);border-radius:2px;color:var(--bg);display:inline-grid;font-family:var(--serif);font-size:15px;font-weight:400;height:26px;place-items:center;width:26px}.nav-desktop[data-v-24a97cac]{align-items:center;color:var(--muted);display:flex;font-size:13px;font-weight:500;gap:32px;letter-spacing:.02em}.nav-desktop a[data-v-24a97cac]{padding:4px 0;position:relative;transition:color .2s var(--ease-out)}.nav-desktop a[data-v-24a97cac]:after{background:var(--accent);bottom:0;content:"";height:1px;left:0;position:absolute;right:0;transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease-out)}.nav-desktop a.router-link-active[data-v-24a97cac]:after,.nav-desktop a[data-v-24a97cac]:hover:after{transform:scaleX(1);transform-origin:left}.nav-desktop a.router-link-active[data-v-24a97cac]{color:var(--fg)}.theme-toggle[data-v-24a97cac]{background:transparent;border:1px solid var(--line);border-radius:6px;color:var(--muted);cursor:pointer;display:grid;height:32px;padding:0;place-items:center;transition:color .2s var(--ease-out),border-color .2s var(--ease-out),background .2s var(--ease-out);width:32px}.theme-toggle[data-v-24a97cac]:hover{background:var(--surface);border-color:var(--fg);color:var(--fg)}.icon-flip-enter-active[data-v-24a97cac],.icon-flip-leave-active[data-v-24a97cac]{transition:transform .25s var(--ease-out),opacity .2s}.icon-flip-enter-from[data-v-24a97cac]{opacity:0;transform:rotate(-90deg) scale(.8)}.icon-flip-leave-to[data-v-24a97cac]{opacity:0;transform:rotate(90deg) scale(.8)}.nav-mobile[data-v-24a97cac]{display:none}@media(max-width:720px){.nav-desktop[data-v-24a97cac]{display:none}.nav-mobile[data-v-24a97cac]{display:block;position:relative}.nav-mobile summary[data-v-24a97cac]{color:var(--muted);cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.04em;list-style:none}.nav-mobile summary[data-v-24a97cac]::-webkit-details-marker{display:none}.nav-mobile nav[data-v-24a97cac]{background:var(--bg-elevated);border:1px solid var(--line);border-radius:4px;box-shadow:0 8px 32px #00000014;display:grid;gap:2px;min-width:140px;padding:8px;position:absolute;right:0;top:36px;z-index:30}.nav-mobile nav a[data-v-24a97cac]{border-radius:3px;color:var(--fg);display:block;font-size:14px;font-weight:600;padding:10px 14px;transition:background .15s}.nav-mobile nav a[data-v-24a97cac]:hover{background:var(--surface);color:var(--fg)}.nav-mobile nav a.router-link-active[data-v-24a97cac]{color:var(--accent)}.mobile-theme-btn[data-v-24a97cac]{background:transparent;border:none;border-radius:0 0 3px 3px;border-top:1px solid var(--line);color:var(--muted);cursor:pointer;display:block;font-family:var(--sans);font-size:14px;font-weight:600;margin-top:4px;padding:10px 14px;text-align:left;transition:color .15s;width:100%}.mobile-theme-btn[data-v-24a97cac]:hover{color:var(--fg)}}</style><style>.footer[data-v-51f18da3]{border-top:1px solid var(--line);margin:0 auto;max-width:var(--max-w);padding:40px var(--px) 56px}.footer-inner[data-v-51f18da3]{align-items:center;color:var(--subtle);display:flex;font-size:12px;gap:16px;justify-content:space-between;letter-spacing:.02em}.footer-brand[data-v-51f18da3]{color:var(--muted);font-weight:700}</style><style>.article[data-v-bf7ffeeb]{animation:fadeInUp .5s var(--ease-out) .1s both;margin:0 auto;max-width:var(--max-w);padding:0 var(--px) 96px}.article-inner[data-v-bf7ffeeb]{display:grid;gap:48px;grid-template-columns:minmax(0,1fr) 160px}.article-inner.no-toc[data-v-bf7ffeeb]{grid-template-columns:minmax(0,1fr)}.article-toc[data-v-bf7ffeeb]{align-self:start;padding-top:8px;position:sticky;top:calc(var(--header-h) + 24px)}.article-toc p[data-v-bf7ffeeb]{color:var(--subtle);font-size:12px;font-weight:700;letter-spacing:.12em;margin:0 0 14px;text-transform:uppercase}.article-toc nav[data-v-bf7ffeeb]{display:grid;gap:2px}.article-toc a[data-v-bf7ffeeb]{border-right:2px solid transparent;color:var(--muted);display:block;font-size:14px;line-height:1.5;margin-right:-12px;padding:6px 12px 6px 0;transition:color .2s,border-color .2s}.article-toc a[data-v-bf7ffeeb]:hover{border-right-color:var(--accent);color:var(--fg)}.article-body[data-v-bf7ffeeb]{max-width:var(--reading-width);min-width:0}.article-header[data-v-bf7ffeeb]{border-bottom:1px solid var(--line);margin-bottom:40px;padding-bottom:28px}.article-header[data-v-bf7ffeeb] h1{font-family:var(--sans);font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:12px 0 0}.article-header[data-v-bf7ffeeb] p:last-child{color:var(--muted);font-family:var(--reading);font-size:17px;line-height:1.8;margin-top:16px}@media(max-width:720px){.article-inner[data-v-bf7ffeeb]{gap:0;grid-template-columns:1fr}.article-toc[data-v-bf7ffeeb]{display:none}.article-body[data-v-bf7ffeeb]{max-width:100%}}</style><style>pre code .line{display:block}</style><link rel="stylesheet" href="/_nuxt/entry.Ddi7qzxD.css" crossorigin><link rel="stylesheet" href="/_nuxt/_slug_.LN-iIu1g.css" crossorigin><link rel="preload" as="fetch" crossorigin="anonymous" href="/notes/flutter-interview/_payload.json?3ee88db9-ac7d-44b5-af4c-b534c59dcbfe"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/mM8iU028.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/D8lejQv_.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/C6kED6KO.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/i-rm5ZeT.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/B_barFft.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/B4wU2DmW.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/C10by1GN.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/Bl2Nbx0A.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CZGFHkyd.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CJm5AIyZ.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CewwFThx.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/_LAXPO7Z.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/Bc4SQBsa.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CD0phDXG.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/AGMPGl7o.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/1mCZDuIA.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BZPan67m.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/Dv4e8SKj.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/Cb5JrXDQ.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/D4DQPTDt.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CrJj5vQF.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BVC5E-zu.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BDKoAS51.js"><script type="module" src="/_nuxt/mM8iU028.js" crossorigin></script><meta name="theme-color" content="#f9f6f1"><meta name="format-detection" content="telephone=no"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Flutter 中高级工程师面试题详解，涵盖 Dart 基础、渲染机制、Widget 树、状态管理、异步编程和性能优化。"><meta property="og:title" content="Flutter 中高级工程师面试题与详解"><meta property="og:description" content="覆盖 Dart 语言、渲染机制、状态管理、异步编程、性能优化等 Flutter 中高级面试核心考点。"><meta property="og:type" content="article"><link rel="canonical" href="/notes/flutter-interview"></head><body><div id="__nuxt"><div class="shell" data-v-24a97cac><div class="reading-progress" aria-hidden="true" data-v-24a97cac><div class="reading-progress-bar" style="transform:scaleX(0);" data-v-24a97cac></div></div><header class="header" data-v-24a97cac><div class="header-inner" data-v-24a97cac><a href="/" class="brand" aria-label="回到首页" data-v-24a97cac><span class="brand-mark" data-v-24a97cac>M</span><span class="brand-text" data-v-24a97cac>思维模型</span></a><nav class="nav-desktop" aria-label="主导航" data-v-24a97cac><a href="/" class="" data-v-24a97cac>首页</a><a href="/library" class="" data-v-24a97cac>价值投资</a><a href="/notes" class="" data-v-24a97cac>个人笔记</a><a href="/about" class="" data-v-24a97cac>个人简介</a><button class="theme-toggle" aria-label="切换暗色模式" data-v-24a97cac><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-v-24a97cac><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-v-24a97cac></path></svg></button></nav><details class="nav-mobile" data-v-24a97cac><summary aria-label="打开导航菜单" data-v-24a97cac>菜单</summary><nav aria-label="移动端导航" data-v-24a97cac><a href="/" class="" data-v-24a97cac>首页</a><a href="/library" class="" data-v-24a97cac>价值投资</a><a href="/notes" class="" data-v-24a97cac>个人笔记</a><a href="/about" class="" data-v-24a97cac>个人简介</a><button class="mobile-theme-btn" data-v-24a97cac>切换暗色</button></nav></details></div></header><main data-v-24a97cac><!--[--><div></div><article class="article" data-v-bf7ffeeb><div class="article-inner" data-v-bf7ffeeb><div class="article-body" data-v-bf7ffeeb><header class="article-header" data-v-bf7ffeeb><!--[--><p class="eyebrow">笔记 / 2026-05-03 10:10:00 CST</p><!--]--><!--[--><h1>Flutter 中高级工程师面试题与详解</h1><!--]--><!--[--><p>覆盖 Dart 语言、渲染机制、状态管理、异步编程、性能优化等 Flutter 中高级面试核心考点。</p><!--]--></header><!--[--><div class="prose"><hr><h2 id="目录"><a href="#目录"><!--[-->目录<!--]--></a></h2><ol><!--[--><li><!--[--><a href="#1-dart-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80" target="_blank" rel="noopener noreferrer"><!--[-->Dart 语言基础<!--]--></a><!--]--></li><li><!--[--><a href="#2-flutter-%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6" target="_blank" rel="noopener noreferrer"><!--[-->Flutter 渲染机制<!--]--></a><!--]--></li><li><!--[--><a href="#3-widget--element--renderobject" target="_blank" rel="noopener noreferrer"><!--[-->Widget / Element / RenderObject<!--]--></a><!--]--></li><li><!--[--><a href="#4-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86" target="_blank" rel="noopener noreferrer"><!--[-->状态管理<!--]--></a><!--]--></li><li><!--[--><a href="#5-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener noreferrer"><!--[-->异步编程<!--]--></a><!--]--></li><li><!--[--><a href="#6-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96" target="_blank" rel="noopener noreferrer"><!--[-->性能优化<!--]--></a><!--]--></li><li><!--[--><a href="#7-%E5%B9%B3%E5%8F%B0%E9%80%9A%E4%BF%A1platform-channel" target="_blank" rel="noopener noreferrer"><!--[-->平台通信（Platform Channel）<!--]--></a><!--]--></li><li><!--[--><a href="#8-%E8%B7%AF%E7%94%B1%E4%B8%8E%E5%AF%BC%E8%88%AA" target="_blank" rel="noopener noreferrer"><!--[-->路由与导航<!--]--></a><!--]--></li><li><!--[--><a href="#9-%E6%B5%8B%E8%AF%95" target="_blank" rel="noopener noreferrer"><!--[-->测试<!--]--></a><!--]--></li><li><!--[--><a href="#10-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener noreferrer"><!--[-->架构设计<!--]--></a><!--]--></li><li><!--[--><a href="#11-%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E7%BC%96%E8%AF%91" target="_blank" rel="noopener noreferrer"><!--[-->包管理与编译<!--]--></a><!--]--></li><li><!--[--><a href="#12-%E5%AE%9E%E6%88%98%E5%9C%BA%E6%99%AF%E9%A2%98" target="_blank" rel="noopener noreferrer"><!--[-->实战场景题<!--]--></a><!--]--></li><!--]--></ol><hr><h2 id="_1-dart-语言基础"><a href="#_1-dart-语言基础"><!--[-->1. Dart 语言基础<!--]--></a></h2><h3 id="q11-dart-中-const-和-final-的区别是什么"><a href="#q11-dart-中-const-和-final-的区别是什么"><!--[-->Q1.1: Dart 中 <code><!--[-->const<!--]--></code> 和 <code><!--[-->final<!--]--></code> 的区别是什么？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->特性<!--]--></th><th><!--[--><code><!--[-->final<!--]--></code><!--]--></th><th><!--[--><code><!--[-->const<!--]--></code><!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->赋值时机<!--]--></td><td><!--[-->运行时确定，只能赋值一次<!--]--></td><td><!--[-->编译时确定，必须是编译期常量<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->对象可变性<!--]--></td><td><!--[-->引用不可变，对象内部状态可变<!--]--></td><td><!--[-->引用和对象都不可变（深度不可变）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->类成员<!--]--></td><td><!--[-->可作为实例成员<!--]--></td><td><!--[-->只能作为 <code><!--[-->static const<!--]--></code><!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->构造函数<!--]--></td><td><!--[-->无特殊要求<!--]--></td><td><!--[-->需要 <code><!--[-->const<!--]--></code> 构造函数<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// final: 运行时确定
+</span></span><span class="line" line="2"><span>final now = DateTime.now(); // OK
+</span></span><span class="line" line="3"><span>final list = [1, 2, 3];
+</span></span><span class="line" line="4"><span>list.add(4); // OK，可以修改列表内容
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>// const: 编译时确定
+</span></span><span class="line" line="7"><span>const pi = 3.14; // OK
+</span></span><span class="line" line="8"><span>const now = DateTime.now(); // 错误！DateTime.now() 不是编译期常量
+</span></span><span class="line" line="9"><span>const list = [1, 2, 3];
+</span></span><span class="line" line="10"><span>list.add(4); // 运行时报错，不可修改
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->深入点：<!--]--></strong> Flutter 中大量使用 <code><!--[-->const<!--]--></code> 构造函数来创建 Widget，因为 <code><!--[-->const<!--]--></code> 对象在编译时就确定了，可以被复用，避免重复创建，从而提升性能。<!--]--></p><hr><h3 id="q12-dart-的空安全null-safety机制是怎样的late-关键字有什么作用和风险"><a href="#q12-dart-的空安全null-safety机制是怎样的late-关键字有什么作用和风险"><!--[-->Q1.2: Dart 的空安全（Null Safety）机制是怎样的？<code><!--[-->late<!--]--></code> 关键字有什么作用和风险？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[-->Dart 2.12 引入了 Sound Null Safety，类型系统区分可空和非空类型：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>String name = &#39;hello&#39;;   // 非空，不能赋值 null
+</span></span><span class="line" line="2"><span>String? name = null;      // 可空
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>// 常用操作符
+</span></span><span class="line" line="5"><span>name?.length;      // 空安全调用
+</span></span><span class="line" line="6"><span>name ?? &#39;default&#39;; // 空合并
+</span></span><span class="line" line="7"><span>name!;             // 强制解包（断言非空，为 null 时抛异常）
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[--><code><!--[-->late<!--]--></code> 关键字：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class MyWidget {
+</span></span><span class="line" line="2"><span>  // 延迟初始化：告诉编译器&quot;我保证在使用前会赋值&quot;
+</span></span><span class="line" line="3"><span>  late final String title;
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  // 懒加载：首次访问时才执行初始化
+</span></span><span class="line" line="6"><span>  late final db = DatabaseHelper.open();
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>  void init(String t) {
+</span></span><span class="line" line="9"><span>    title = t;
+</span></span><span class="line" line="10"><span>  }
+</span></span><span class="line" line="11"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[--><code><!--[-->late<!--]--></code> 的风险：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->如果在赋值前访问 <code><!--[-->late<!--]--></code> 变量，会抛出 <code><!--[-->LateInitializationError<!--]--></code><!--]--></li><li><!--[-->编译器无法在编译时捕获这个错误，相当于把空安全的保护推迟到了运行时<!--]--></li><li><!--[-->应尽量避免滥用 <code><!--[-->late<!--]--></code>，可以考虑用可空类型 + <code><!--[-->??<!--]--></code> 替代<!--]--></li><!--]--></ul><hr><h3 id="q13-dart-中的-mixin-是什么和抽象类接口有什么区别"><a href="#q13-dart-中的-mixin-是什么和抽象类接口有什么区别"><!--[-->Q1.3: Dart 中的 <code><!--[-->mixin<!--]--></code> 是什么？和抽象类、接口有什么区别？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Mixin：用 mixin 关键字定义，提供代码复用
+</span></span><span class="line" line="2"><span>mixin Swimming {
+</span></span><span class="line" line="3"><span>  void swim() =&gt; print(&#39;Swimming&#39;);
+</span></span><span class="line" line="4"><span>}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>mixin Flying {
+</span></span><span class="line" line="7"><span>  void fly() =&gt; print(&#39;Flying&#39;);
+</span></span><span class="line" line="8"><span>}
+</span></span><span class="line" line="9"><span emptylineplaceholder="true">
+</span></span><span class="line" line="10"><span>// 使用 with 混入
+</span></span><span class="line" line="11"><span>class Duck extends Animal with Swimming, Flying {
+</span></span><span class="line" line="12"><span>  // Duck 同时拥有 swim() 和 fly()
+</span></span><span class="line" line="13"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->三者对比：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->特性<!--]--></th><th><!--[-->抽象类 (abstract class)<!--]--></th><th><!--[-->接口 (implicit interface)<!--]--></th><th><!--[-->Mixin<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->实例化<!--]--></td><td><!--[-->不能直接实例化<!--]--></td><td><!--[-->不能直接实例化<!--]--></td><td><!--[-->不能直接实例化<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->继承方式<!--]--></td><td><!--[--><code><!--[-->extends<!--]--></code>（单继承）<!--]--></td><td><!--[--><code><!--[-->implements<!--]--></code>（多实现）<!--]--></td><td><!--[--><code><!--[-->with<!--]--></code>（多混入）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->构造函数<!--]--></td><td><!--[-->可以有<!--]--></td><td><!--[-->可以有<!--]--></td><td><!--[--><strong><!--[-->不能有<!--]--></strong>构造函数<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->方法实现<!--]--></td><td><!--[-->可以有默认实现<!--]--></td><td><!--[-->需要全部重写<!--]--></td><td><!--[-->可以有默认实现<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->限制<!--]--></td><td><!--[-->只能继承一个<!--]--></td><td><!--[-->可以实现多个<!--]--></td><td><!--[-->可以混入多个<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->Mixin 的线性化（Linearization）：<!--]--></strong> 当多个 mixin 有同名方法时，<strong><!--[-->最后混入的优先<!--]--></strong>：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>mixin A { String greet() =&gt; &#39;A&#39;; }
+</span></span><span class="line" line="2"><span>mixin B { String greet() =&gt; &#39;B&#39;; }
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>class C with A, B {} // C().greet() 返回 &#39;B&#39;
+</span></span></code><!--]--></pre><p><!--[--><code><!--[-->mixin on<!--]--></code> 可以限制 mixin 只能用于特定类型：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>mixin Draggable on Widget {
+</span></span><span class="line" line="2"><span>  // 只能被 Widget 的子类使用
+</span></span><span class="line" line="3"><span>}
+</span></span></code><!--]--></pre><hr><h3 id="q14-解释-dart-中的-extension-方法和-sealed-class"><a href="#q14-解释-dart-中的-extension-方法和-sealed-class"><!--[-->Q1.4: 解释 Dart 中的 <code><!--[-->Extension<!--]--></code> 方法和 <code><!--[-->sealed class<!--]--></code><!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->Extension 方法（Dart 2.7+）：<!--]--></strong> 在不修改原始类的情况下添加方法：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>extension StringX on String {
+</span></span><span class="line" line="2"><span>  bool get isEmail =&gt; RegExp(r&#39;^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$&#39;).hasMatch(this);
+</span></span><span class="line" line="3"><span>  String capitalize() =&gt; &#39;${this[0].toUpperCase()}${substring(1)}&#39;;
+</span></span><span class="line" line="4"><span>}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>// 使用
+</span></span><span class="line" line="7"><span>&#39;test@email.com&#39;.isEmail;</span><span> // true
+</span></span><span class="line" line="8"><span>&#39;hello&#39;.capitalize();</span><span>      // &#39;Hello&#39;
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Sealed Class（Dart 3.0+）：<!--]--></strong> 限制类的继承范围，必须在同一个文件中定义子类，编译器可以做穷举检查：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>sealed class Shape {}
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>class Circle extends Shape {
+</span></span><span class="line" line="4"><span>  final double radius;
+</span></span><span class="line" line="5"><span>  Circle(this.radius);
+</span></span><span class="line" line="6"><span>}
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>class Square extends Shape {
+</span></span><span class="line" line="9"><span>  final double side;
+</span></span><span class="line" line="10"><span>  Square(this.side);
+</span></span><span class="line" line="11"><span>}
+</span></span><span class="line" line="12"><span emptylineplaceholder="true">
+</span></span><span class="line" line="13"><span>// switch 穷举检查（不需要 default）
+</span></span><span class="line" line="14"><span>double area(Shape shape) =&gt; switch (shape) {
+</span></span><span class="line" line="15"><span>  Circle(radius: var r) =&gt; 3.14 * r * r,
+</span></span><span class="line" line="16"><span>  Square(side: var s) =&gt; s * s,
+</span></span><span class="line" line="17"><span>  // 如果遗漏了某个子类，编译器会报错
+</span></span><span class="line" line="18"><span>};
+</span></span></code><!--]--></pre><p><!--[--><code><!--[-->sealed class<!--]--></code> 非常适合用于状态建模（如 BLoC 的 State）。<!--]--></p><hr><h3 id="q15-dart-中的泛型协变covariance是什么为什么-listcat-可以赋值给-listanimal"><a href="#q15-dart-中的泛型协变covariance是什么为什么-listcat-可以赋值给-listanimal"><!--[-->Q1.5: Dart 中的泛型协变（Covariance）是什么？为什么 <code><!--[-->List&lt;Cat&gt;<!--]--></code> 可以赋值给 <code><!--[-->List&lt;Animal&gt;<!--]--></code>？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[-->Dart 的泛型是<strong><!--[-->协变（covariant）的<!--]--></strong>，这与 Java（不变）不同：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class Animal {}
+</span></span><span class="line" line="2"><span>class Cat extends Animal {}
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>List&lt;Cat&gt; cats = [Cat()];
+</span></span><span class="line" line="5"><span>List&lt;Animal&gt; animals = cats; // Dart 中合法！
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>// 但这会带来运行时风险：
+</span></span><span class="line" line="8"><span>animals.add(Dog()); // 运行时报错！因为底层实际是 List&lt;Cat&gt;
+</span></span></code><!--]--></pre><p><!--[-->Dart 选择了协变，在编译时允许这种赋值，但通过运行时检查来保证类型安全。这是一种<strong><!--[-->实用主义的折衷<!--]--></strong>。<!--]--></p><p><!--[--><code><!--[-->covariant<!--]--></code> 关键字用于显式声明参数协变：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class Animal {
+</span></span><span class="line" line="2"><span>  void chase(covariant Animal other) {} // 子类可以缩窄参数类型
+</span></span><span class="line" line="3"><span>}
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>class Cat extends Animal {
+</span></span><span class="line" line="6"><span>  @override
+</span></span><span class="line" line="7"><span>  void chase(Mouse other) {} // 参数从 Animal 缩窄为 Mouse
+</span></span><span class="line" line="8"><span>}
+</span></span></code><!--]--></pre><hr><h2 id="_2-flutter-渲染机制"><a href="#_2-flutter-渲染机制"><!--[-->2. Flutter 渲染机制<!--]--></a></h2><h3 id="q21-flutter-的渲染流水线rendering-pipeline是怎样的一帧是如何绘制到屏幕上的"><a href="#q21-flutter-的渲染流水线rendering-pipeline是怎样的一帧是如何绘制到屏幕上的"><!--[-->Q2.1: Flutter 的渲染流水线（Rendering Pipeline）是怎样的？一帧是如何绘制到屏幕上的？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[-->Flutter 渲染流水线的核心流程（每帧约 16.6ms @60fps）：<!--]--></p><pre class="language-text"><!--[--><code>用户输入 / 动画 Ticker
+       ↓
+┌──────────────────────────────────────────────┐
+│  1. Build Phase（构建阶段）                    │
+│     - 调用 Widget.build()                     │
+│     - 生成/更新 Element Tree                   │
+│     - 标记需要更新的 Element (dirty)            │
+├──────────────────────────────────────────────┤
+│  2. Layout Phase（布局阶段）                   │
+│     - RenderObject.performLayout()            │
+│     - 父节点向子节点传递 Constraints            │
+│     - 子节点向父节点返回 Size                   │
+│     - 确定每个节点的大小和位置                   │
+├──────────────────────────────────────────────┤
+│  3. Paint Phase（绘制阶段）                    │
+│     - RenderObject.paint()                    │
+│     - 绘制到 Layer Tree                        │
+│     - 生成绘制指令                              │
+├──────────────────────────────────────────────┤
+│  4. Compositing（合成阶段）                    │
+│     - Layer Tree 发送到 Engine                 │
+│     - Skia/Impeller 执行光栅化                  │
+│     - GPU 渲染到屏幕                            │
+└──────────────────────────────────────────────┘
+</code><!--]--></pre><p><!--[--><strong><!--[-->关键概念：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[--><strong><!--[-->Constraints go down, Sizes go up, Parent sets position<!--]--></strong>：约束从父到子传递，尺寸从子到父返回，最终由父节点决定子节点的位置<!--]--></li><li><!--[-->Flutter 使用 <strong><!--[-->单次遍历布局算法<!--]--></strong>（O(N)），非常高效<!--]--></li><li><!--[--><strong><!--[-->Relayout Boundary<!--]--></strong>：限制重新布局的范围，避免整棵树重新计算<!--]--></li><!--]--></ul><hr><h3 id="q22-什么是-impeller它和-skia-有什么区别"><a href="#q22-什么是-impeller它和-skia-有什么区别"><!--[-->Q2.2: 什么是 Impeller？它和 Skia 有什么区别？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->特性<!--]--></th><th><!--[-->Skia<!--]--></th><th><!--[-->Impeller<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->来源<!--]--></td><td><!--[-->Google 通用 2D 图形库<!--]--></td><td><!--[-->Flutter 团队专门为 Flutter 开发<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Shader 编译<!--]--></td><td><!--[-->运行时编译（JIT）<!--]--></td><td><!--[-->构建时预编译（AOT）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->首帧卡顿（Jank）<!--]--></td><td><!--[-->存在 Shader compilation jank<!--]--></td><td><!--[-->几乎消除<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->平台支持<!--]--></td><td><!--[-->全平台<!--]--></td><td><!--[-->iOS（默认），Android（已稳定）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->渲染后端<!--]--></td><td><!--[-->OpenGL、Vulkan、Metal<!--]--></td><td><!--[-->Metal（iOS）、Vulkan/OpenGL（Android）<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->Impeller 解决的核心问题：<!--]--></strong> Skia 在首次使用某种绘制效果时需要运行时编译 Shader，导致掉帧（shader compilation jank）。Impeller 在构建时就预编译了所有 Shader，从根本上消除了这个问题。<!--]--></p><hr><h3 id="q23-解释-flutter-中的-repaintboundary-的作用和使用场景"><a href="#q23-解释-flutter-中的-repaintboundary-的作用和使用场景"><!--[-->Q2.3: 解释 Flutter 中的 <code><!--[-->RepaintBoundary<!--]--></code> 的作用和使用场景<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><code><!--[-->RepaintBoundary<!--]--></code> 将子树隔离到独立的 Layer 中，当子树需要重绘时，不会影响到父级或兄弟节点。<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 没有 RepaintBoundary：整个区域一起重绘
+</span></span><span class="line" line="2"><span>Column(
+</span></span><span class="line" line="3"><span>  children: [
+</span></span><span class="line" line="4"><span>    StaticHeader(),     // 每次都跟着重绘
+</span></span><span class="line" line="5"><span>    AnimatedCounter(),  // 频繁变化
+</span></span><span class="line" line="6"><span>  ],
+</span></span><span class="line" line="7"><span>)
+</span></span><span class="line" line="8"><span emptylineplaceholder="true">
+</span></span><span class="line" line="9"><span>// 有 RepaintBoundary：AnimatedCounter 重绘时不影响 Header
+</span></span><span class="line" line="10"><span>Column(
+</span></span><span class="line" line="11"><span>  children: [
+</span></span><span class="line" line="12"><span>    StaticHeader(),
+</span></span><span class="line" line="13"><span>    RepaintBoundary(
+</span></span><span class="line" line="14"><span>      child: AnimatedCounter(), // 独立图层，独立重绘
+</span></span><span class="line" line="15"><span>    ),
+</span></span><span class="line" line="16"><span>  ],
+</span></span><span class="line" line="17"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->适合使用的场景：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->频繁重绘的动画组件（如进度条、计数器）<!--]--></li><li><!--[-->复杂但静态的子树（如复杂地图、图表的静态部分）<!--]--></li><li><!--[--><code><!--[-->CustomPaint<!--]--></code> 中复杂的绑定逻辑<!--]--></li><!--]--></ul><p><!--[--><strong><!--[-->不适合使用的场景：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->子树本身就很简单，创建额外 Layer 的开销反而更大<!--]--></li><li><!--[-->子树和父级总是一起变化<!--]--></li><!--]--></ul><p><!--[--><strong><!--[-->调试工具：<!--]--></strong> 可以使用 <code><!--[-->debugRepaintRainbowEnabled = true<!--]--></code> 来可视化重绘区域。<!--]--></p><hr><h2 id="_3-widget-element-renderobject"><a href="#_3-widget-element-renderobject"><!--[-->3. Widget / Element / RenderObject<!--]--></a></h2><h3 id="q31-详解-widgetelementrenderobject-三棵树的关系和职责"><a href="#q31-详解-widgetelementrenderobject-三棵树的关系和职责"><!--[-->Q3.1: 详解 Widget、Element、RenderObject 三棵树的关系和职责<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-text"><!--[--><code>Widget Tree          Element Tree           RenderObject Tree
+(配置/蓝图)          (实例/生命周期)         (布局/绘制)
+
+Container ──────► ComponentElement
+  │                    │
+  ├─ Padding ────► SingleChildRenderObjectElement ──► RenderPadding
+  │                    │
+  └─ Text ──────► LeafRenderObjectElement ──────────► RenderParagraph
+</code><!--]--></pre><table><!--[--><thead><!--[--><tr><!--[--><th><!--[--><!--]--></th><th><!--[-->Widget<!--]--></th><th><!--[-->Element<!--]--></th><th><!--[-->RenderObject<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[--><strong><!--[-->职责<!--]--></strong><!--]--></td><td><!--[-->描述 UI 配置（不可变）<!--]--></td><td><!--[-->管理生命周期、持有状态<!--]--></td><td><!--[-->实际布局和绘制<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><strong><!--[-->可变性<!--]--></strong><!--]--></td><td><!--[-->不可变（immutable）<!--]--></td><td><!--[-->可变、长寿命<!--]--></td><td><!--[-->可变<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><strong><!--[-->创建频率<!--]--></strong><!--]--></td><td><!--[-->每次 <code><!--[-->build()<!--]--></code> 都可能重建<!--]--></td><td><!--[-->尽量复用（通过 canUpdate）<!--]--></td><td><!--[-->跟随 Element 复用<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><strong><!--[-->类比<!--]--></strong><!--]--></td><td><!--[-->HTML 模板<!--]--></td><td><!--[-->虚拟 DOM 节点<!--]--></td><td><!--[-->浏览器 DOM 节点<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->核心流程：<!--]--></strong><!--]--></p><ol><!--[--><li><!--[-->Widget 是 <strong><!--[-->轻量的配置对象<!--]--></strong>，描述&quot;我想要什么&quot;<!--]--></li><li><!--[-->Flutter 框架根据 Widget 创建或更新 Element<!--]--></li><li><!--[-->Element 通过 <code><!--[-->Widget.canUpdate(oldWidget, newWidget)<!--]--></code> 判断是否复用：
+<ul><!--[--><li><!--[--><code><!--[-->runtimeType<!--]--></code> 和 <code><!--[-->key<!--]--></code> 都相同 → 复用 Element，调用 <code><!--[-->update()<!--]--></code><!--]--></li><li><!--[-->不同 → 销毁旧 Element，创建新的<!--]--></li><!--]--></ul><!--]--></li><li><!--[-->RenderObjectElement 持有对应的 RenderObject，负责实际的布局和绘制<!--]--></li><!--]--></ol><p><!--[--><strong><!--[-->为什么这样设计？<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->Widget 不可变 + 频繁重建 → 声明式 UI 简洁易用<!--]--></li><li><!--[-->Element 复用 → 保持状态、避免不必要的重建<!--]--></li><li><!--[-->RenderObject 分离 → 只在真正需要时才重新布局和绘制<!--]--></li><!--]--></ul><hr><h3 id="q32-key-的作用是什么什么时候必须使用-key"><a href="#q32-key-的作用是什么什么时候必须使用-key"><!--[-->Q3.2: <code><!--[-->Key<!--]--></code> 的作用是什么？什么时候必须使用 Key？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[-->Key 影响 Element 的复用策略。没有 Key 时，Flutter 只根据 <code><!--[-->runtimeType<!--]--></code> 和在列表中的位置来匹配：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 问题场景：交换两个带状态的 Widget
+</span></span><span class="line" line="2"><span>// 没有 Key 时，Element 不会交换，只是更新配置 → 状态错乱
+</span></span><span class="line" line="3"><span>Column(
+</span></span><span class="line" line="4"><span>  children: [
+</span></span><span class="line" line="5"><span>    TodoTile(todo: todos[0]), // Element 0 保持原位
+</span></span><span class="line" line="6"><span>    TodoTile(todo: todos[1]), // Element 1 保持原位
+</span></span><span class="line" line="7"><span>    // 交换 todos 后，Element 复用了，但状态（勾选状态）没跟着走
+</span></span><span class="line" line="8"><span>  ],
+</span></span><span class="line" line="9"><span>)
+</span></span><span class="line" line="10"><span emptylineplaceholder="true">
+</span></span><span class="line" line="11"><span>// 加 Key 后，Flutter 能正确匹配并移动 Element
+</span></span><span class="line" line="12"><span>Column(
+</span></span><span class="line" line="13"><span>  children: [
+</span></span><span class="line" line="14"><span>    TodoTile(key: ValueKey(todos[0].id), todo: todos[0]),
+</span></span><span class="line" line="15"><span>    TodoTile(key: ValueKey(todos[1].id), todo: todos[1]),
+</span></span><span class="line" line="16"><span>  ],
+</span></span><span class="line" line="17"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Key 的类型：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->Key 类型<!--]--></th><th><!--[-->用途<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[--><code><!--[-->ValueKey<!--]--></code><!--]--></td><td><!--[-->基于值（如 id）匹配<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->ObjectKey<!--]--></code><!--]--></td><td><!--[-->基于对象引用匹配<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->UniqueKey<!--]--></code><!--]--></td><td><!--[-->强制不复用（每次创建新 Element）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->GlobalKey<!--]--></code><!--]--></td><td><!--[-->跨树访问 Element/State，可跨父节点移动<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->PageStorageKey<!--]--></code><!--]--></td><td><!--[-->保存页面滚动位置等<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->必须使用 Key 的场景：<!--]--></strong><!--]--></p><ol><!--[--><li><!--[--><strong><!--[-->列表项会增删或重排<!--]--></strong>（如 <code><!--[-->ListView<!--]--></code> + <code><!--[-->reorder<!--]--></code>）<!--]--></li><li><!--[--><strong><!--[-->同类型有状态 Widget 的顺序会变化<!--]--></strong><!--]--></li><li><!--[--><strong><!--[-->需要在不同位置保持同一个 Widget 的状态<!--]--></strong>（<code><!--[-->GlobalKey<!--]--></code>）<!--]--></li><li><!--[--><strong><!--[-->AnimatedSwitcher 等需要识别新旧子 Widget 的动画组件<!--]--></strong><!--]--></li><!--]--></ol><hr><h3 id="q33-statefulwidget-的完整生命周期是怎样的"><a href="#q33-statefulwidget-的完整生命周期是怎样的"><!--[-->Q3.3: <code><!--[-->StatefulWidget<!--]--></code> 的完整生命周期是怎样的？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-text"><!--[--><code>createState()
+     ↓
+initState()          ← 只调用一次，初始化状态
+     ↓
+didChangeDependencies()  ← InheritedWidget 变化时也会调用
+     ↓
+build()              ← 返回 Widget 树
+     ↓
+ ┌── didUpdateWidget()  ← 父 Widget 重建且 canUpdate 返回 true 时
+ │        ↓
+ └── build()
+     ↓
+deactivate()         ← Element 从树中移除（可能是临时的）
+     ↓
+dispose()            ← 永久移除，释放资源
+</code><!--]--></pre><p><!--[--><strong><!--[-->各阶段注意事项：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class _MyWidgetState extends State&lt;MyWidget&gt; {
+</span></span><span class="line" line="2"><span>  late final AnimationController _controller;
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>  @override
+</span></span><span class="line" line="5"><span>  void initState() {
+</span></span><span class="line" line="6"><span>    super.initState(); // 必须调用 super
+</span></span><span class="line" line="7"><span>    _controller = AnimationController(vsync: this);
+</span></span><span class="line" line="8"><span>    // 不能在这里访问 InheritedWidget（context 还没准备好）
+</span></span><span class="line" line="9"><span>    // 不能在这里调用 setState()
+</span></span><span class="line" line="10"><span>  }
+</span></span><span class="line" line="11"><span emptylineplaceholder="true">
+</span></span><span class="line" line="12"><span>  @override
+</span></span><span class="line" line="13"><span>  void didChangeDependencies() {
+</span></span><span class="line" line="14"><span>    super.didChangeDependencies();
+</span></span><span class="line" line="15"><span>    // 可以安全地访问 InheritedWidget
+</span></span><span class="line" line="16"><span>    final theme = Theme.of(context);
+</span></span><span class="line" line="17"><span>  }
+</span></span><span class="line" line="18"><span emptylineplaceholder="true">
+</span></span><span class="line" line="19"><span>  @override
+</span></span><span class="line" line="20"><span>  void didUpdateWidget(covariant MyWidget oldWidget) {
+</span></span><span class="line" line="21"><span>    super.didUpdateWidget(oldWidget);
+</span></span><span class="line" line="22"><span>    // 父 Widget 重建时调用，可以对比新旧 widget 的属性
+</span></span><span class="line" line="23"><span>    if (widget.id != oldWidget.id) {
+</span></span><span class="line" line="24"><span>      _fetchData();
+</span></span><span class="line" line="25"><span>    }
+</span></span><span class="line" line="26"><span>  }
+</span></span><span class="line" line="27"><span emptylineplaceholder="true">
+</span></span><span class="line" line="28"><span>  @override
+</span></span><span class="line" line="29"><span>  void dispose() {
+</span></span><span class="line" line="30"><span>    _controller.dispose(); // 释放资源，避免内存泄漏
+</span></span><span class="line" line="31"><span>    super.dispose(); // 必须调用 super
+</span></span><span class="line" line="32"><span>  }
+</span></span><span class="line" line="33"><span>}
+</span></span></code><!--]--></pre><hr><h2 id="_4-状态管理"><a href="#_4-状态管理"><!--[-->4. 状态管理<!--]--></a></h2><h3 id="q41-对比-flutter-常用的状态管理方案"><a href="#q41-对比-flutter-常用的状态管理方案"><!--[-->Q4.1: 对比 Flutter 常用的状态管理方案<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->方案<!--]--></th><th><!--[-->核心理念<!--]--></th><th><!--[-->复杂度<!--]--></th><th><!--[-->适用场景<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[--><code><!--[-->setState<!--]--></code><!--]--></td><td><!--[-->局部状态直接修改<!--]--></td><td><!--[-->低<!--]--></td><td><!--[-->单个 Widget 内部状态<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->InheritedWidget<!--]--></code><!--]--></td><td><!--[-->沿树向下传递数据<!--]--></td><td><!--[-->中<!--]--></td><td><!--[-->框架基础，其他方案的底层<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->Provider<!--]--></code><!--]--></td><td><!--[-->InheritedWidget 的封装<!--]--></td><td><!--[-->低-中<!--]--></td><td><!--[-->中小项目，官方推荐入门<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->Riverpod<!--]--></code><!--]--></td><td><!--[-->编译安全、无 context 依赖<!--]--></td><td><!--[-->中<!--]--></td><td><!--[-->中大型项目<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->BLoC<!--]--></code><!--]--></td><td><!--[-->事件驱动、流式响应<!--]--></td><td><!--[-->高<!--]--></td><td><!--[-->大型项目、团队协作<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->GetX<!--]--></code><!--]--></td><td><!--[-->极简 API、响应式<!--]--></td><td><!--[-->低<!--]--></td><td><!--[-->快速开发（但争议较大）<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->BLoC 模式详解：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Event
+</span></span><span class="line" line="2"><span>sealed class CounterEvent {}
+</span></span><span class="line" line="3"><span>class Increment extends CounterEvent {}
+</span></span><span class="line" line="4"><span>class Decrement extends CounterEvent {}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>// State
+</span></span><span class="line" line="7"><span>class CounterState {
+</span></span><span class="line" line="8"><span>  final int count;
+</span></span><span class="line" line="9"><span>  const CounterState(this.count);
+</span></span><span class="line" line="10"><span>}
+</span></span><span class="line" line="11"><span emptylineplaceholder="true">
+</span></span><span class="line" line="12"><span>// BLoC
+</span></span><span class="line" line="13"><span>class CounterBloc extends Bloc&lt;CounterEvent, CounterState&gt; {
+</span></span><span class="line" line="14"><span>  CounterBloc() : super(const CounterState(0)) {
+</span></span><span class="line" line="15"><span>    on&lt;Increment&gt;((event, emit) =&gt; emit(CounterState(state.count + 1)));
+</span></span><span class="line" line="16"><span>    on&lt;Decrement&gt;((event, emit) =&gt; emit(CounterState(state.count - 1)));
+</span></span><span class="line" line="17"><span>  }
+</span></span><span class="line" line="18"><span>}
+</span></span><span class="line" line="19"><span emptylineplaceholder="true">
+</span></span><span class="line" line="20"><span>// UI
+</span></span><span class="line" line="21"><span>BlocBuilder&lt;CounterBloc, CounterState&gt;(
+</span></span><span class="line" line="22"><span>  builder: (context, state) =&gt; Text(&#39;${state.count}&#39;),
+</span></span><span class="line" line="23"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Riverpod 示例：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 定义 Provider（全局，但编译安全）
+</span></span><span class="line" line="2"><span>final counterProvider = StateNotifierProvider&lt;CounterNotifier, int&gt;((ref) {
+</span></span><span class="line" line="3"><span>  return CounterNotifier();
+</span></span><span class="line" line="4"><span>});
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>class CounterNotifier extends StateNotifier&lt;int&gt; {
+</span></span><span class="line" line="7"><span>  CounterNotifier() : super(0);
+</span></span><span class="line" line="8"><span>  void increment() =&gt; state++;
+</span></span><span class="line" line="9"><span>}
+</span></span><span class="line" line="10"><span emptylineplaceholder="true">
+</span></span><span class="line" line="11"><span>// UI（不需要 context）
+</span></span><span class="line" line="12"><span>class MyWidget extends ConsumerWidget {
+</span></span><span class="line" line="13"><span>  @override
+</span></span><span class="line" line="14"><span>  Widget build(BuildContext context, WidgetRef ref) {
+</span></span><span class="line" line="15"><span>    final count = ref.watch(counterProvider);
+</span></span><span class="line" line="16"><span>    return Text(&#39;$count&#39;);
+</span></span><span class="line" line="17"><span>  }
+</span></span><span class="line" line="18"><span>}
+</span></span></code><!--]--></pre><hr><h3 id="q42-inheritedwidget-是如何工作的为什么-themeofcontext-能获取到主题数据"><a href="#q42-inheritedwidget-是如何工作的为什么-themeofcontext-能获取到主题数据"><!--[-->Q4.2: <code><!--[-->InheritedWidget<!--]--></code> 是如何工作的？为什么 <code><!--[-->Theme.of(context)<!--]--></code> 能获取到主题数据？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><code><!--[-->InheritedWidget<!--]--></code> 是 Flutter 中沿 Widget 树向下传递数据的机制。<!--]--></p><p><!--[--><strong><!--[-->工作原理：<!--]--></strong><!--]--></p><ol><!--[--><li><!--[--><code><!--[-->InheritedWidget<!--]--></code> 存储在 Element 树中<!--]--></li><li><!--[-->当子 Widget 调用 <code><!--[-->context.dependOnInheritedWidgetOfExactType&lt;T&gt;()<!--]--></code> 时：
+<ul><!--[--><li><!--[-->沿 Element 树向上查找最近的 T 类型的 InheritedElement<!--]--></li><li><!--[-->将当前 Element <strong><!--[-->注册为依赖者<!--]--></strong><!--]--></li><!--]--></ul><!--]--></li><li><!--[-->当 InheritedWidget 更新时，所有注册的依赖者都会收到通知（触发 <code><!--[-->didChangeDependencies()<!--]--></code>，然后 rebuild）<!--]--></li><!--]--></ol><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class MyTheme extends InheritedWidget {
+</span></span><span class="line" line="2"><span>  final Color primaryColor;
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>  const MyTheme({
+</span></span><span class="line" line="5"><span>    required this.primaryColor,
+</span></span><span class="line" line="6"><span>    required super.child,
+</span></span><span class="line" line="7"><span>  });
+</span></span><span class="line" line="8"><span emptylineplaceholder="true">
+</span></span><span class="line" line="9"><span>  // 便捷方法
+</span></span><span class="line" line="10"><span>  static MyTheme of(BuildContext context) {
+</span></span><span class="line" line="11"><span>    return context.dependOnInheritedWidgetOfExactType&lt;MyTheme&gt;()!;
+</span></span><span class="line" line="12"><span>  }
+</span></span><span class="line" line="13"><span emptylineplaceholder="true">
+</span></span><span class="line" line="14"><span>  @override
+</span></span><span class="line" line="15"><span>  bool updateShouldNotify(MyTheme oldWidget) {
+</span></span><span class="line" line="16"><span>    return primaryColor != oldWidget.primaryColor;
+</span></span><span class="line" line="17"><span>    // 返回 false 则不通知依赖者，即使自身重建了
+</span></span><span class="line" line="18"><span>  }
+</span></span><span class="line" line="19"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->关键区别：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[--><code><!--[-->dependOnInheritedWidgetOfExactType<!--]--></code>：注册依赖，会自动重建<!--]--></li><li><!--[--><code><!--[-->getInheritedWidgetOfExactType<!--]--></code>：只读取，不注册依赖，不会自动重建<!--]--></li><!--]--></ul><p><!--[--><code><!--[-->Theme.of(context)<!--]--></code> 内部就是调用了 <code><!--[-->dependOnInheritedWidgetOfExactType<!--]--></code>，所以当 Theme 变化时，所有使用了 <code><!--[-->Theme.of(context)<!--]--></code> 的 Widget 都会自动重建。<!--]--></p><hr><h2 id="_5-异步编程"><a href="#_5-异步编程"><!--[-->5. 异步编程<!--]--></a></h2><h3 id="q51-dart-是单线程的那它是如何处理异步操作的"><a href="#q51-dart-是单线程的那它是如何处理异步操作的"><!--[-->Q5.1: Dart 是单线程的，那它是如何处理异步操作的？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[-->Dart 使用 <strong><!--[-->事件循环（Event Loop）<!--]--></strong> 机制，类似 JavaScript：<!--]--></p><pre class="language-text"><!--[--><code>┌─────────────────────────────────────────┐
+│             Event Loop                   │
+│                                         │
+│  ┌──────────────────────────────┐       │
+│  │  Microtask Queue（微任务队列）│       │
+│  │  - Future.then() 回调        │ ← 优先 │
+│  │  - scheduleMicrotask()       │       │
+│  └──────────────────────────────┘       │
+│                 ↓                        │
+│  ┌──────────────────────────────┐       │
+│  │  Event Queue（事件队列）      │       │
+│  │  - I/O 完成回调              │       │
+│  │  - Timer 回调                │       │
+│  │  - UI 事件（点击、滑动）      │       │
+│  └──────────────────────────────┘       │
+└─────────────────────────────────────────┘
+</code><!--]--></pre><p><!--[--><strong><!--[-->执行顺序：<!--]--></strong><!--]--></p><ol><!--[--><li><!--[-->执行同步代码直到完成<!--]--></li><li><!--[-->清空所有 Microtask Queue<!--]--></li><li><!--[-->从 Event Queue 取出一个事件执行<!--]--></li><li><!--[-->再次清空 Microtask Queue<!--]--></li><li><!--[-->重复 3-4<!--]--></li><!--]--></ol><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>void main() {
+</span></span><span class="line" line="2"><span>  print(&#39;1&#39;); // 同步
+</span></span><span class="line" line="3"><span>  Future(() =&gt; print(&#39;2&#39;));             // Event Queue
+</span></span><span class="line" line="4"><span>  Future.microtask(() =&gt; print(&#39;3&#39;));   // Microtask Queue
+</span></span><span class="line" line="5"><span>  Future(() =&gt; print(&#39;4&#39;));             // Event Queue
+</span></span><span class="line" line="6"><span>  Future.microtask(() =&gt; print(&#39;5&#39;));   // Microtask Queue
+</span></span><span class="line" line="7"><span>  print(&#39;6&#39;); // 同步
+</span></span><span class="line" line="8"><span>}
+</span></span><span class="line" line="9"><span>// 输出顺序：1, 6, 3, 5, 2, 4
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->真正的并行 → Isolate：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Isolate：独立内存空间，通过消息传递通信
+</span></span><span class="line" line="2"><span>final result = await Isolate.run(() {
+</span></span><span class="line" line="3"><span>  // 在独立 Isolate 中执行 CPU 密集型任务
+</span></span><span class="line" line="4"><span>  return heavyComputation();
+</span></span><span class="line" line="5"><span>});
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>// compute() 是 Flutter 提供的便捷方法
+</span></span><span class="line" line="8"><span>final result = await compute(parseJson, rawData);
+</span></span></code><!--]--></pre><hr><h3 id="q52-future-和-stream-的区别是什么streamcontroller-怎么用"><a href="#q52-future-和-stream-的区别是什么streamcontroller-怎么用"><!--[-->Q5.2: <code><!--[-->Future<!--]--></code> 和 <code><!--[-->Stream<!--]--></code> 的区别是什么？<code><!--[-->StreamController<!--]--></code> 怎么用？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[--><!--]--></th><th><!--[-->Future<!--]--></th><th><!--[-->Stream<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->值的数量<!--]--></td><td><!--[-->单个异步值<!--]--></td><td><!--[-->多个异步值序列<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->类比<!--]--></td><td><!--[--><code><!--[-->Promise<!--]--></code> (JS)<!--]--></td><td><!--[--><code><!--[-->Observable<!--]--></code> (RxJS)<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->完成<!--]--></td><td><!--[-->一次性完成或失败<!--]--></td><td><!--[-->可持续发送数据，直到关闭<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->Stream 的两种类型：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 1. 单订阅流（Single-subscription）：只能 listen 一次
+</span></span><span class="line" line="2"><span>final controller = StreamController&lt;int&gt;();
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>// 2. 广播流（Broadcast）：可以多次 listen
+</span></span><span class="line" line="5"><span>final controller = StreamController&lt;int&gt;.broadcast();
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->StreamController 使用：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class CounterService {
+</span></span><span class="line" line="2"><span>  final _controller = StreamController&lt;int&gt;.broadcast();
+</span></span><span class="line" line="3"><span>  int _count = 0;
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  Stream&lt;int&gt; get countStream =&gt; _controller.stream;
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>  void increment() {
+</span></span><span class="line" line="8"><span>    _count++;
+</span></span><span class="line" line="9"><span>    _controller.sink.add(_count);  // 发送数据
+</span></span><span class="line" line="10"><span>  }
+</span></span><span class="line" line="11"><span emptylineplaceholder="true">
+</span></span><span class="line" line="12"><span>  void dispose() {
+</span></span><span class="line" line="13"><span>    _controller.close(); // 必须关闭，否则内存泄漏
+</span></span><span class="line" line="14"><span>  }
+</span></span><span class="line" line="15"><span>}
+</span></span><span class="line" line="16"><span emptylineplaceholder="true">
+</span></span><span class="line" line="17"><span>// 在 Widget 中使用
+</span></span><span class="line" line="18"><span>StreamBuilder&lt;int&gt;(
+</span></span><span class="line" line="19"><span>  stream: counterService.countStream,
+</span></span><span class="line" line="20"><span>  initialData: 0,
+</span></span><span class="line" line="21"><span>  builder: (context, snapshot) {
+</span></span><span class="line" line="22"><span>    if (snapshot.hasError) return Text(&#39;Error: ${snapshot.error}&#39;);
+</span></span><span class="line" line="23"><span>    return Text(&#39;Count: ${snapshot.data}&#39;);
+</span></span><span class="line" line="24"><span>  },
+</span></span><span class="line" line="25"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Stream 常用变换操作：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>stream
+</span></span><span class="line" line="2"><span>  .where((value) =&gt; value &gt; 0)        // 过滤
+</span></span><span class="line" line="3"><span>  .map((value) =&gt; value * 2)          // 映射
+</span></span><span class="line" line="4"><span>  .distinct()                         // 去重
+</span></span><span class="line" line="5"><span>  .debounceTime(Duration(ms: 300))    // 防抖（需 rxdart）
+</span></span><span class="line" line="6"><span>  .listen((value) =&gt; print(value));
+</span></span></code><!--]--></pre><hr><h3 id="q53-解释-async-和-yield-的用法"><a href="#q53-解释-async-和-yield-的用法"><!--[-->Q5.3: 解释 <code><!--[-->async*<!--]--></code> 和 <code><!--[-->yield<!--]--></code> 的用法<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><code><!--[-->async*<!--]--></code> 用于创建异步生成器，返回一个 Stream：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 异步生成器
+</span></span><span class="line" line="2"><span>Stream&lt;int&gt; countDown(int from) async* {
+</span></span><span class="line" line="3"><span>  for (var i = from; i &gt;= 0; i--) {
+</span></span><span class="line" line="4"><span>    await Future.delayed(Duration(seconds: 1));
+</span></span><span class="line" line="5"><span>    yield i; // 每次 yield 发送一个值到 Stream
+</span></span><span class="line" line="6"><span>  }
+</span></span><span class="line" line="7"><span>}
+</span></span><span class="line" line="8"><span emptylineplaceholder="true">
+</span></span><span class="line" line="9"><span>// yield* 委托到另一个 Stream
+</span></span><span class="line" line="10"><span>Stream&lt;int&gt; fullSequence() async* {
+</span></span><span class="line" line="11"><span>  yield* countDown(3);   // 先倒计时
+</span></span><span class="line" line="12"><span>  yield -1;              // 然后发送 -1
+</span></span><span class="line" line="13"><span>  yield* countDown(2);   // 再倒计时
+</span></span><span class="line" line="14"><span>}
+</span></span><span class="line" line="15"><span emptylineplaceholder="true">
+</span></span><span class="line" line="16"><span>// 同步生成器用 sync* + Iterable
+</span></span><span class="line" line="17"><span>Iterable&lt;int&gt; range(int start, int end) sync* {
+</span></span><span class="line" line="18"><span>  for (var i = start; i &lt;= end; i++) {
+</span></span><span class="line" line="19"><span>    yield i;
+</span></span><span class="line" line="20"><span>  }
+</span></span><span class="line" line="21"><span>}
+</span></span></code><!--]--></pre><hr><h2 id="_6-性能优化"><a href="#_6-性能优化"><!--[-->6. 性能优化<!--]--></a></h2><h3 id="q61-flutter-性能优化有哪些关键策略"><a href="#q61-flutter-性能优化有哪些关键策略"><!--[-->Q6.1: Flutter 性能优化有哪些关键策略？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->1. 减少不必要的 rebuild：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 整棵树在动画每帧都重建
+</span></span><span class="line" line="2"><span>AnimatedBuilder(
+</span></span><span class="line" line="3"><span>  animation: _controller,
+</span></span><span class="line" line="4"><span>  builder: (context, child) {
+</span></span><span class="line" line="5"><span>    return Column(
+</span></span><span class="line" line="6"><span>      children: [
+</span></span><span class="line" line="7"><span>        Transform.rotate(
+</span></span><span class="line" line="8"><span>          angle: _controller.value * 2 * pi,
+</span></span><span class="line" line="9"><span>          child: const Icon(Icons.refresh), // 每帧都重建
+</span></span><span class="line" line="10"><span>        ),
+</span></span><span class="line" line="11"><span>        const ExpensiveWidget(), // 每帧都重建！
+</span></span><span class="line" line="12"><span>      ],
+</span></span><span class="line" line="13"><span>    );
+</span></span><span class="line" line="14"><span>  },
+</span></span><span class="line" line="15"><span>)
+</span></span><span class="line" line="16"><span emptylineplaceholder="true">
+</span></span><span class="line" line="17"><span>// ✅ 使用 child 参数，ExpensiveWidget 只构建一次
+</span></span><span class="line" line="18"><span>AnimatedBuilder(
+</span></span><span class="line" line="19"><span>  animation: _controller,
+</span></span><span class="line" line="20"><span>  child: const ExpensiveWidget(), // 只构建一次，缓存在这里
+</span></span><span class="line" line="21"><span>  builder: (context, child) {
+</span></span><span class="line" line="22"><span>    return Column(
+</span></span><span class="line" line="23"><span>      children: [
+</span></span><span class="line" line="24"><span>        Transform.rotate(
+</span></span><span class="line" line="25"><span>          angle: _controller.value * 2 * pi,
+</span></span><span class="line" line="26"><span>          child: const Icon(Icons.refresh),
+</span></span><span class="line" line="27"><span>        ),
+</span></span><span class="line" line="28"><span>        child!, // 复用缓存的 Widget
+</span></span><span class="line" line="29"><span>      ],
+</span></span><span class="line" line="30"><span>    );
+</span></span><span class="line" line="31"><span>  },
+</span></span><span class="line" line="32"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->2. 使用 <code><!--[-->const<!--]--></code> 构造函数：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ✅ const Widget 在编译时创建，可以被复用
+</span></span><span class="line" line="2"><span>const Text(&#39;Hello&#39;)
+</span></span><span class="line" line="3"><span>const SizedBox(height: 16)
+</span></span><span class="line" line="4"><span>const EdgeInsets.all(8)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->3. ListView 优化：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 一次性构建所有子项
+</span></span><span class="line" line="2"><span>ListView(children: items.map((i) =&gt; ItemWidget(i)).toList())
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>// ✅ 懒加载，只构建可见区域
+</span></span><span class="line" line="5"><span>ListView.builder(
+</span></span><span class="line" line="6"><span>  itemCount: items.length,
+</span></span><span class="line" line="7"><span>  itemBuilder: (context, index) =&gt; ItemWidget(items[index]),
+</span></span><span class="line" line="8"><span>)
+</span></span><span class="line" line="9"><span emptylineplaceholder="true">
+</span></span><span class="line" line="10"><span>// ✅ 固定高度项可以跳过布局计算
+</span></span><span class="line" line="11"><span>ListView.builder(
+</span></span><span class="line" line="12"><span>  itemExtent: 72.0, // 已知每项高度
+</span></span><span class="line" line="13"><span>  itemBuilder: (context, index) =&gt; ItemWidget(items[index]),
+</span></span><span class="line" line="14"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->4. 图片优化：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 指定 cacheWidth/cacheHeight，避免解码全分辨率
+</span></span><span class="line" line="2"><span>Image.asset(
+</span></span><span class="line" line="3"><span>  &#39;assets/large_image.png&#39;,
+</span></span><span class="line" line="4"><span>  cacheWidth: 200, // 解码到指定大小，节省内存
+</span></span><span class="line" line="5"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->5. 合理拆分 Widget：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 一个巨大的 build 方法
+</span></span><span class="line" line="2"><span>Widget build(BuildContext context) {
+</span></span><span class="line" line="3"><span>  return Column(children: [
+</span></span><span class="line" line="4"><span>    // 200 行 UI 代码...
+</span></span><span class="line" line="5"><span>  ]);
+</span></span><span class="line" line="6"><span>}
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>// ✅ 拆分为独立的 Widget 类（不是方法！）
+</span></span><span class="line" line="9"><span>// Widget 类可以独立 rebuild，方法提取不行
+</span></span><span class="line" line="10"><span>class HeaderSection extends StatelessWidget { ... }
+</span></span><span class="line" line="11"><span>class ContentSection extends StatelessWidget { ... }
+</span></span></code><!--]--></pre><hr><h3 id="q62-如何使用-devtools-诊断性能问题"><a href="#q62-如何使用-devtools-诊断性能问题"><!--[-->Q6.2: 如何使用 DevTools 诊断性能问题？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->Performance Overlay：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>MaterialApp(
+</span></span><span class="line" line="2"><span>  showPerformanceOverlay: true, // 显示 GPU/UI 线程帧率
+</span></span><span class="line" line="3"><span>)
+</span></span></code><!--]--></pre><p><!--[-->两行图表：<!--]--></p><ul><!--[--><li><!--[-->上方（UI Thread）：build/layout/paint 耗时<!--]--></li><li><!--[-->下方（Raster Thread）：合成和光栅化耗时<!--]--></li><li><!--[-->红色柱体 = 该帧超过 16ms，发生掉帧<!--]--></li><!--]--></ul><p><!--[--><strong><!--[-->Flutter DevTools 关键面板：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->面板<!--]--></th><th><!--[-->用途<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->Performance<!--]--></td><td><!--[-->帧耗时分析，识别卡顿帧<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->CPU Profiler<!--]--></td><td><!--[-->函数级别耗时分析<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Memory<!--]--></td><td><!--[-->内存分配、泄漏检测<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Widget Inspector<!--]--></td><td><!--[-->Widget 树结构、rebuild 统计<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Network<!--]--></td><td><!--[-->HTTP 请求监控<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->常用调试标志：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>import &#39;package:flutter/rendering.dart&#39;;
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>// 显示重绘区域（彩虹色边框）
+</span></span><span class="line" line="4"><span>debugRepaintRainbowEnabled = true;
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>// 显示布局边界
+</span></span><span class="line" line="7"><span>debugPaintSizeEnabled = true;
+</span></span><span class="line" line="8"><span emptylineplaceholder="true">
+</span></span><span class="line" line="9"><span>// 打印重建的 Widget
+</span></span><span class="line" line="10"><span>debugPrintRebuildDirtyWidgets = true;
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Timeline 使用：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>import &#39;dart:developer&#39;;
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>Timeline.startSync(&#39;MyExpensiveOperation&#39;);
+</span></span><span class="line" line="4"><span>// ... 耗时操作
+</span></span><span class="line" line="5"><span>Timeline.finishSync();
+</span></span></code><!--]--></pre><hr><h2 id="_7-平台通信platform-channel"><a href="#_7-平台通信platform-channel"><!--[-->7. 平台通信（Platform Channel）<!--]--></a></h2><h3 id="q71-flutter-的-platform-channel-有哪几种类型分别适用于什么场景"><a href="#q71-flutter-的-platform-channel-有哪几种类型分别适用于什么场景"><!--[-->Q7.1: Flutter 的 Platform Channel 有哪几种类型？分别适用于什么场景？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-text"><!--[--><code>Flutter (Dart)  ←──── Platform Channel ────→  Native (iOS/Android)
+</code><!--]--></pre><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->Channel 类型<!--]--></th><th><!--[-->通信方式<!--]--></th><th><!--[-->适用场景<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[--><code><!--[-->MethodChannel<!--]--></code><!--]--></td><td><!--[-->异步方法调用（请求-响应）<!--]--></td><td><!--[-->调用原生 API（相机、蓝牙等）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->EventChannel<!--]--></code><!--]--></td><td><!--[-->原生向 Dart 持续发送事件流<!--]--></td><td><!--[-->传感器数据、位置更新<!--]--></td><!--]--></tr><tr><!--[--><td><!--[--><code><!--[-->BasicMessageChannel<!--]--></code><!--]--></td><td><!--[-->双向消息传递<!--]--></td><td><!--[-->自定义编解码、简单数据交换<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->MethodChannel 示例：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Dart 端
+</span></span><span class="line" line="2"><span>class BatteryService {
+</span></span><span class="line" line="3"><span>  static const _channel = MethodChannel(&#39;com.example/battery&#39;);
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  Future&lt;int&gt; getBatteryLevel() async {
+</span></span><span class="line" line="6"><span>    try {
+</span></span><span class="line" line="7"><span>      final level = await _channel.invokeMethod&lt;int&gt;(&#39;getBatteryLevel&#39;);
+</span></span><span class="line" line="8"><span>      return level ?? -1;
+</span></span><span class="line" line="9"><span>    } on PlatformException catch (e) {
+</span></span><span class="line" line="10"><span>      throw Exception(&#39;Failed to get battery level: ${e.message}&#39;);
+</span></span><span class="line" line="11"><span>    }
+</span></span><span class="line" line="12"><span>  }
+</span></span><span class="line" line="13"><span>}
+</span></span></code><!--]--></pre><pre class="language-kotlin shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Android (Kotlin) 端
+</span></span><span class="line" line="2"><span>class MainActivity : FlutterActivity() {
+</span></span><span class="line" line="3"><span>    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+</span></span><span class="line" line="4"><span>        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, &quot;com.example/battery&quot;)
+</span></span><span class="line" line="5"><span>            .setMethodCallHandler { call, result -&gt;
+</span></span><span class="line" line="6"><span>                when (call.method) {
+</span></span><span class="line" line="7"><span>                    &quot;getBatteryLevel&quot; -&gt; {
+</span></span><span class="line" line="8"><span>                        val level = getBatteryLevel()
+</span></span><span class="line" line="9"><span>                        if (level != -1) result.success(level)
+</span></span><span class="line" line="10"><span>                        else result.error(&quot;UNAVAILABLE&quot;, &quot;Battery level not available&quot;, null)
+</span></span><span class="line" line="11"><span>                    }
+</span></span><span class="line" line="12"><span>                    else -&gt; result.notImplemented()
+</span></span><span class="line" line="13"><span>                }
+</span></span><span class="line" line="14"><span>            }
+</span></span><span class="line" line="15"><span>    }
+</span></span><span class="line" line="16"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->EventChannel 示例：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Dart 端：接收原生传感器数据流
+</span></span><span class="line" line="2"><span>class AccelerometerService {
+</span></span><span class="line" line="3"><span>  static const _channel = EventChannel(&#39;com.example/accelerometer&#39;);
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  Stream&lt;AccelerometerEvent&gt; get events {
+</span></span><span class="line" line="6"><span>    return _channel.receiveBroadcastStream().map((data) {
+</span></span><span class="line" line="7"><span>      final list = data as List;
+</span></span><span class="line" line="8"><span>      return AccelerometerEvent(list[0], list[1], list[2]);
+</span></span><span class="line" line="9"><span>    });
+</span></span><span class="line" line="10"><span>  }
+</span></span><span class="line" line="11"><span>}
+</span></span></code><!--]--></pre><hr><h3 id="q72-什么是-ffiforeign-function-interface什么时候用-ffi-代替-platform-channel"><a href="#q72-什么是-ffiforeign-function-interface什么时候用-ffi-代替-platform-channel"><!--[-->Q7.2: 什么是 FFI（Foreign Function Interface）？什么时候用 FFI 代替 Platform Channel？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[--><!--]--></th><th><!--[-->Platform Channel<!--]--></th><th><!--[-->FFI<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->通信方式<!--]--></td><td><!--[-->异步消息传递<!--]--></td><td><!--[-->直接函数调用（同步）<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->性能<!--]--></td><td><!--[-->有序列化/反序列化开销<!--]--></td><td><!--[-->接近原生调用性能<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->适用语言<!--]--></td><td><!--[-->Java/Kotlin、ObjC/Swift<!--]--></td><td><!--[-->C/C++<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->复杂度<!--]--></td><td><!--[-->较低<!--]--></td><td><!--[-->较高<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->典型场景<!--]--></td><td><!--[-->平台 API 调用<!--]--></td><td><!--[-->高性能计算、复用 C 库<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// FFI 示例：调用 C 函数
+</span></span><span class="line" line="2"><span>import &#39;dart:ffi&#39;;
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span>// 定义 C 函数签名
+</span></span><span class="line" line="5"><span>typedef NativeAdd = Int32 Function(Int32 a, Int32 b);
+</span></span><span class="line" line="6"><span>typedef DartAdd = int Function(int a, int b);
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>void main() {
+</span></span><span class="line" line="9"><span>  final dylib = DynamicLibrary.open(&#39;libnative.so&#39;);
+</span></span><span class="line" line="10"><span>  final add = dylib.lookupFunction&lt;NativeAdd, DartAdd&gt;(&#39;add&#39;);
+</span></span><span class="line" line="11"><span>  print(add(3, 4)); // 7，同步调用
+</span></span><span class="line" line="12"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->选择 FFI 的场景：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->需要调用现有的 C/C++ 库（如 SQLite、OpenCV）<!--]--></li><li><!--[-->对性能要求极高，不能接受 Channel 的序列化开销<!--]--></li><li><!--[-->需要同步调用（Platform Channel 只支持异步）<!--]--></li><!--]--></ul><hr><h2 id="_8-路由与导航"><a href="#_8-路由与导航"><!--[-->8. 路由与导航<!--]--></a></h2><h3 id="q81-navigator-10-和-navigator-20router-api有什么区别"><a href="#q81-navigator-10-和-navigator-20router-api有什么区别"><!--[-->Q8.1: Navigator 1.0 和 Navigator 2.0（Router API）有什么区别？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->Navigator 1.0（命令式）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 入栈
+</span></span><span class="line" line="2"><span>Navigator.push(context, MaterialPageRoute(builder: (_) =&gt; DetailPage()));
+</span></span><span class="line" line="3"><span>// 或命名路由
+</span></span><span class="line" line="4"><span>Navigator.pushNamed(context, &#39;/detail&#39;, arguments: {&#39;id&#39;: 42});
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>// 出栈
+</span></span><span class="line" line="7"><span>Navigator.pop(context);
+</span></span><span class="line" line="8"><span emptylineplaceholder="true">
+</span></span><span class="line" line="9"><span>// 替换
+</span></span><span class="line" line="10"><span>Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =&gt; HomePage()));
+</span></span></code><!--]--></pre><p><!--[-->优点：简单直观
+缺点：<!--]--></p><ul><!--[--><li><!--[-->难以处理深层链接（Deep Link）<!--]--></li><li><!--[-->难以从 URL 恢复导航状态（Web）<!--]--></li><li><!--[-->路由栈不透明，难以声明式管理<!--]--></li><!--]--></ul><p><!--[--><strong><!--[-->Navigator 2.0（声明式 / Router API）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>MaterialApp.router(
+</span></span><span class="line" line="2"><span>  routerConfig: GoRouter(
+</span></span><span class="line" line="3"><span>    routes: [
+</span></span><span class="line" line="4"><span>      GoRoute(
+</span></span><span class="line" line="5"><span>        path: &#39;/&#39;,
+</span></span><span class="line" line="6"><span>        builder: (context, state) =&gt; HomePage(),
+</span></span><span class="line" line="7"><span>        routes: [
+</span></span><span class="line" line="8"><span>          GoRoute(
+</span></span><span class="line" line="9"><span>            path: &#39;detail/:id&#39;,
+</span></span><span class="line" line="10"><span>            builder: (context, state) {
+</span></span><span class="line" line="11"><span>              final id = state.pathParameters[&#39;id&#39;]!;
+</span></span><span class="line" line="12"><span>              return DetailPage(id: id);
+</span></span><span class="line" line="13"><span>            },
+</span></span><span class="line" line="14"><span>          ),
+</span></span><span class="line" line="15"><span>        ],
+</span></span><span class="line" line="16"><span>      ),
+</span></span><span class="line" line="17"><span>    ],
+</span></span><span class="line" line="18"><span>  ),
+</span></span><span class="line" line="19"><span>)
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->go_router（官方推荐的 Router 封装）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 声明式导航
+</span></span><span class="line" line="2"><span>context.go(&#39;/detail/42&#39;);       // 替换整个栈
+</span></span><span class="line" line="3"><span>context.push(&#39;/detail/42&#39;);     // 入栈
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>// 重定向
+</span></span><span class="line" line="6"><span>GoRouter(
+</span></span><span class="line" line="7"><span>  redirect: (context, state) {
+</span></span><span class="line" line="8"><span>    final isLoggedIn = authService.isLoggedIn;
+</span></span><span class="line" line="9"><span>    if (!isLoggedIn &amp;&amp; state.matchedLocation != &#39;/login&#39;) {
+</span></span><span class="line" line="10"><span>      return &#39;/login&#39;;
+</span></span><span class="line" line="11"><span>    }
+</span></span><span class="line" line="12"><span>    return null; // 不重定向
+</span></span><span class="line" line="13"><span>  },
+</span></span><span class="line" line="14"><span>)
+</span></span><span class="line" line="15"><span emptylineplaceholder="true">
+</span></span><span class="line" line="16"><span>// ShellRoute：共享布局（如底部导航栏）
+</span></span><span class="line" line="17"><span>ShellRoute(
+</span></span><span class="line" line="18"><span>  builder: (context, state, child) {
+</span></span><span class="line" line="19"><span>    return ScaffoldWithBottomNav(child: child);
+</span></span><span class="line" line="20"><span>  },
+</span></span><span class="line" line="21"><span>  routes: [
+</span></span><span class="line" line="22"><span>    GoRoute(path: &#39;/home&#39;, builder: ...),
+</span></span><span class="line" line="23"><span>    GoRoute(path: &#39;/settings&#39;, builder: ...),
+</span></span><span class="line" line="24"><span>  ],
+</span></span><span class="line" line="25"><span>)
+</span></span></code><!--]--></pre><hr><h2 id="_9-测试"><a href="#_9-测试"><!--[-->9. 测试<!--]--></a></h2><h3 id="q91-flutter-中有哪些测试类型如何编写-widget-测试"><a href="#q91-flutter-中有哪些测试类型如何编写-widget-测试"><!--[-->Q9.1: Flutter 中有哪些测试类型？如何编写 Widget 测试？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->类型<!--]--></th><th><!--[-->速度<!--]--></th><th><!--[-->范围<!--]--></th><th><!--[-->依赖<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->Unit Test<!--]--></td><td><!--[-->极快<!--]--></td><td><!--[-->单个函数/类<!--]--></td><td><!--[-->无<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Widget Test<!--]--></td><td><!--[-->快<!--]--></td><td><!--[-->单个 Widget<!--]--></td><td><!--[-->Flutter 测试框架<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Integration Test<!--]--></td><td><!--[-->慢<!--]--></td><td><!--[-->完整应用<!--]--></td><td><!--[-->真实设备/模拟器<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->Widget 测试示例：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>import &#39;package:flutter_test/flutter_test.dart&#39;;
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>void main() {
+</span></span><span class="line" line="4"><span>  testWidgets(&#39;Counter increments&#39;, (WidgetTester tester) async {
+</span></span><span class="line" line="5"><span>    // 构建 Widget
+</span></span><span class="line" line="6"><span>    await tester.pumpWidget(const MaterialApp(home: CounterPage()));
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>    // 验证初始状态
+</span></span><span class="line" line="9"><span>    expect(find.text(&#39;0&#39;), findsOneWidget);
+</span></span><span class="line" line="10"><span>    expect(find.text(&#39;1&#39;), findsNothing);
+</span></span><span class="line" line="11"><span emptylineplaceholder="true">
+</span></span><span class="line" line="12"><span>    // 模拟交互
+</span></span><span class="line" line="13"><span>    await tester.tap(find.byIcon(Icons.add));
+</span></span><span class="line" line="14"><span>    await tester.pump(); // 触发一帧重建
+</span></span><span class="line" line="15"><span emptylineplaceholder="true">
+</span></span><span class="line" line="16"><span>    // 验证结果
+</span></span><span class="line" line="17"><span>    expect(find.text(&#39;0&#39;), findsNothing);
+</span></span><span class="line" line="18"><span>    expect(find.text(&#39;1&#39;), findsOneWidget);
+</span></span><span class="line" line="19"><span>  });
+</span></span><span class="line" line="20"><span emptylineplaceholder="true">
+</span></span><span class="line" line="21"><span>  testWidgets(&#39;shows loading then data&#39;, (tester) async {
+</span></span><span class="line" line="22"><span>    await tester.pumpWidget(MyApp());
+</span></span><span class="line" line="23"><span emptylineplaceholder="true">
+</span></span><span class="line" line="24"><span>    // 验证 loading 状态
+</span></span><span class="line" line="25"><span>    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+</span></span><span class="line" line="26"><span emptylineplaceholder="true">
+</span></span><span class="line" line="27"><span>    // 等待异步操作完成
+</span></span><span class="line" line="28"><span>    await tester.pumpAndSettle(); // 持续 pump 直到没有待处理的帧
+</span></span><span class="line" line="29"><span emptylineplaceholder="true">
+</span></span><span class="line" line="30"><span>    // 验证数据状态
+</span></span><span class="line" line="31"><span>    expect(find.text(&#39;Data loaded&#39;), findsOneWidget);
+</span></span><span class="line" line="32"><span>  });
+</span></span><span class="line" line="33"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->常用 Finder：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>find.text(&#39;Hello&#39;);                    // 按文本查找
+</span></span><span class="line" line="2"><span>find.byType(ElevatedButton);          // 按类型查找
+</span></span><span class="line" line="3"><span>find.byIcon(Icons.add);               // 按图标查找
+</span></span><span class="line" line="4"><span>find.byKey(const Key(&#39;submit_btn&#39;));   // 按 Key 查找
+</span></span><span class="line" line="5"><span>find.byWidgetPredicate((w) =&gt; ...);   // 自定义条件
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Mock 依赖（使用 mockito/mocktail）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class MockAuthRepo extends Mock implements AuthRepository {}
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>testWidgets(&#39;shows error on login failure&#39;, (tester) async {
+</span></span><span class="line" line="4"><span>  final mockRepo = MockAuthRepo();
+</span></span><span class="line" line="5"><span>  when(() =&gt; mockRepo.login(any(), any()))
+</span></span><span class="line" line="6"><span>      .thenThrow(AuthException(&#39;Invalid&#39;));
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>  await tester.pumpWidget(
+</span></span><span class="line" line="9"><span>    ProviderScope(
+</span></span><span class="line" line="10"><span>      overrides: [authRepoProvider.overrideWithValue(mockRepo)],
+</span></span><span class="line" line="11"><span>      child: const MyApp(),
+</span></span><span class="line" line="12"><span>    ),
+</span></span><span class="line" line="13"><span>  );
+</span></span><span class="line" line="14"><span emptylineplaceholder="true">
+</span></span><span class="line" line="15"><span>  await tester.enterText(find.byKey(Key(&#39;email&#39;)), &#39;test@test.com&#39;);
+</span></span><span class="line" line="16"><span>  await tester.enterText(find.byKey(Key(&#39;password&#39;)), &#39;wrong&#39;);
+</span></span><span class="line" line="17"><span>  await tester.tap(find.text(&#39;Login&#39;));
+</span></span><span class="line" line="18"><span>  await tester.pumpAndSettle();
+</span></span><span class="line" line="19"><span emptylineplaceholder="true">
+</span></span><span class="line" line="20"><span>  expect(find.text(&#39;Invalid&#39;), findsOneWidget);
+</span></span><span class="line" line="21"><span>});
+</span></span></code><!--]--></pre><hr><h3 id="q92-什么是-golden-test怎么使用"><a href="#q92-什么是-golden-test怎么使用"><!--[-->Q9.2: 什么是 Golden Test？怎么使用？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[-->Golden Test（黄金测试 / 快照测试）将 Widget 渲染结果与预存的参考图片进行像素级对比：<!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>testWidgets(&#39;MyButton golden test&#39;, (tester) async {
+</span></span><span class="line" line="2"><span>  await tester.pumpWidget(
+</span></span><span class="line" line="3"><span>    MaterialApp(
+</span></span><span class="line" line="4"><span>      home: Scaffold(
+</span></span><span class="line" line="5"><span>        body: Center(
+</span></span><span class="line" line="6"><span>          child: MyCustomButton(label: &#39;Click Me&#39;),
+</span></span><span class="line" line="7"><span>        ),
+</span></span><span class="line" line="8"><span>      ),
+</span></span><span class="line" line="9"><span>    ),
+</span></span><span class="line" line="10"><span>  );
+</span></span><span class="line" line="11"><span emptylineplaceholder="true">
+</span></span><span class="line" line="12"><span>  // 首次运行生成参考图，之后每次运行对比
+</span></span><span class="line" line="13"><span>  await expectLater(
+</span></span><span class="line" line="14"><span>    find.byType(MyCustomButton),
+</span></span><span class="line" line="15"><span>    matchesGoldenFile(&#39;goldens/my_button.png&#39;),
+</span></span><span class="line" line="16"><span>  );
+</span></span><span class="line" line="17"><span>});
+</span></span></code><!--]--></pre><pre class="language-bash shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj"># 生成/更新 golden 文件
+</span></span><span class="line" line="2"><span class="sScJk">flutter</span><span class="sZZnC"> test</span><span class="sj4cs"> --update-goldens
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span class="sJ8bj"># 正常测试（对比）
+</span></span><span class="line" line="5"><span class="sScJk">flutter</span><span class="sZZnC"> test
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->注意事项：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->不同平台渲染可能有细微差异，建议在 CI 中固定平台<!--]--></li><li><!--[-->字体渲染差异可能导致误报，可使用 <code><!--[-->flutter_test<!--]--></code> 提供的默认字体<!--]--></li><li><!--[-->适合用于设计系统组件库、自定义绘制组件的回归测试<!--]--></li><!--]--></ul><hr><h2 id="_10-架构设计"><a href="#_10-架构设计"><!--[-->10. 架构设计<!--]--></a></h2><h3 id="q101-介绍-flutter-中常用的架构模式"><a href="#q101-介绍-flutter-中常用的架构模式"><!--[-->Q10.1: 介绍 Flutter 中常用的架构模式<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->1. Clean Architecture（推荐用于大型项目）：<!--]--></strong><!--]--></p><pre class="language-text"><!--[--><code>lib/
+├── core/                  # 公共工具、常量、错误处理
+├── features/
+│   └── auth/
+│       ├── data/          # 数据层
+│       │   ├── datasources/    # API、本地数据库
+│       │   ├── models/         # JSON 序列化模型（DTO）
+│       │   └── repositories/   # Repository 实现
+│       ├── domain/        # 领域层（纯 Dart，无 Flutter 依赖）
+│       │   ├── entities/       # 业务实体
+│       │   ├── repositories/   # Repository 接口（抽象类）
+│       │   └── usecases/       # 用例（业务逻辑）
+│       └── presentation/  # 表现层
+│           ├── bloc/           # BLoC / Cubit
+│           ├── pages/          # 页面
+│           └── widgets/        # UI 组件
+</code><!--]--></pre><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// Domain 层：纯业务逻辑，不依赖任何框架
+</span></span><span class="line" line="2"><span>abstract class AuthRepository {
+</span></span><span class="line" line="3"><span>  Future&lt;Either&lt;Failure, User&gt;&gt; login(String email, String password);
+</span></span><span class="line" line="4"><span>}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>class LoginUseCase {
+</span></span><span class="line" line="7"><span>  final AuthRepository repository;
+</span></span><span class="line" line="8"><span>  LoginUseCase(this.repository);
+</span></span><span class="line" line="9"><span emptylineplaceholder="true">
+</span></span><span class="line" line="10"><span>  Future&lt;Either&lt;Failure, User&gt;&gt; call(String email, String password) {
+</span></span><span class="line" line="11"><span>    return repository.login(email, password);
+</span></span><span class="line" line="12"><span>  }
+</span></span><span class="line" line="13"><span>}
+</span></span><span class="line" line="14"><span emptylineplaceholder="true">
+</span></span><span class="line" line="15"><span>// Data 层：实现 Repository 接口
+</span></span><span class="line" line="16"><span>class AuthRepositoryImpl implements AuthRepository {
+</span></span><span class="line" line="17"><span>  final AuthRemoteDataSource remote;
+</span></span><span class="line" line="18"><span>  final AuthLocalDataSource local;
+</span></span><span class="line" line="19"><span emptylineplaceholder="true">
+</span></span><span class="line" line="20"><span>  @override
+</span></span><span class="line" line="21"><span>  Future&lt;Either&lt;Failure, User&gt;&gt; login(String email, String password) async {
+</span></span><span class="line" line="22"><span>    try {
+</span></span><span class="line" line="23"><span>      final model = await remote.login(email, password);
+</span></span><span class="line" line="24"><span>      await local.cacheToken(model.token);
+</span></span><span class="line" line="25"><span>      return Right(model.toEntity());
+</span></span><span class="line" line="26"><span>    } on ServerException catch (e) {
+</span></span><span class="line" line="27"><span>      return Left(ServerFailure(e.message));
+</span></span><span class="line" line="28"><span>    }
+</span></span><span class="line" line="29"><span>  }
+</span></span><span class="line" line="30"><span>}
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->2. MVVM（适合中型项目）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ViewModel
+</span></span><span class="line" line="2"><span>class LoginViewModel extends ChangeNotifier {
+</span></span><span class="line" line="3"><span>  final AuthRepository _repo;
+</span></span><span class="line" line="4"><span>  bool isLoading = false;
+</span></span><span class="line" line="5"><span>  String? error;
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>  Future&lt;void&gt; login(String email, String password) async {
+</span></span><span class="line" line="8"><span>    isLoading = true;
+</span></span><span class="line" line="9"><span>    notifyListeners();
+</span></span><span class="line" line="10"><span emptylineplaceholder="true">
+</span></span><span class="line" line="11"><span>    final result = await _repo.login(email, password);
+</span></span><span class="line" line="12"><span>    result.fold(
+</span></span><span class="line" line="13"><span>      (failure) =&gt; error = failure.message,
+</span></span><span class="line" line="14"><span>      (user) =&gt; { /* navigate */ },
+</span></span><span class="line" line="15"><span>    );
+</span></span><span class="line" line="16"><span emptylineplaceholder="true">
+</span></span><span class="line" line="17"><span>    isLoading = false;
+</span></span><span class="line" line="18"><span>    notifyListeners();
+</span></span><span class="line" line="19"><span>  }
+</span></span><span class="line" line="20"><span>}
+</span></span><span class="line" line="21"><span emptylineplaceholder="true">
+</span></span><span class="line" line="22"><span>// View
+</span></span><span class="line" line="23"><span>class LoginPage extends StatelessWidget {
+</span></span><span class="line" line="24"><span>  @override
+</span></span><span class="line" line="25"><span>  Widget build(BuildContext context) {
+</span></span><span class="line" line="26"><span>    return ChangeNotifierProvider(
+</span></span><span class="line" line="27"><span>      create: (_) =&gt; LoginViewModel(context.read&lt;AuthRepository&gt;()),
+</span></span><span class="line" line="28"><span>      child: Consumer&lt;LoginViewModel&gt;(
+</span></span><span class="line" line="29"><span>        builder: (context, vm, _) {
+</span></span><span class="line" line="30"><span>          if (vm.isLoading) return CircularProgressIndicator();
+</span></span><span class="line" line="31"><span>          // ...
+</span></span><span class="line" line="32"><span>        },
+</span></span><span class="line" line="33"><span>      ),
+</span></span><span class="line" line="34"><span>    );
+</span></span><span class="line" line="35"><span>  }
+</span></span><span class="line" line="36"><span>}
+</span></span></code><!--]--></pre><hr><h3 id="q102-如何实现依赖注入di"><a href="#q102-如何实现依赖注入di"><!--[-->Q10.2: 如何实现依赖注入（DI）？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->1. get_it（Service Locator 模式）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>final sl = GetIt.instance;
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>void setupDependencies() {
+</span></span><span class="line" line="4"><span>  // 单例
+</span></span><span class="line" line="5"><span>  sl.registerLazySingleton&lt;ApiClient&gt;(() =&gt; ApiClient());
+</span></span><span class="line" line="6"><span>  sl.registerLazySingleton&lt;AuthRepository&gt;(
+</span></span><span class="line" line="7"><span>    () =&gt; AuthRepositoryImpl(sl&lt;ApiClient&gt;()),
+</span></span><span class="line" line="8"><span>  );
+</span></span><span class="line" line="9"><span emptylineplaceholder="true">
+</span></span><span class="line" line="10"><span>  // 工厂（每次获取新实例）
+</span></span><span class="line" line="11"><span>  sl.registerFactory&lt;LoginBloc&gt;(
+</span></span><span class="line" line="12"><span>    () =&gt; LoginBloc(sl&lt;AuthRepository&gt;()),
+</span></span><span class="line" line="13"><span>  );
+</span></span><span class="line" line="14"><span>}
+</span></span><span class="line" line="15"><span emptylineplaceholder="true">
+</span></span><span class="line" line="16"><span>// 使用
+</span></span><span class="line" line="17"><span>final bloc = sl&lt;LoginBloc&gt;();
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->2. Riverpod（推荐，编译安全的 DI）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>final apiClientProvider = Provider((ref) =&gt; ApiClient());
+</span></span><span class="line" line="2"><span emptylineplaceholder="true">
+</span></span><span class="line" line="3"><span>final authRepoProvider = Provider((ref) {
+</span></span><span class="line" line="4"><span>  return AuthRepositoryImpl(ref.read(apiClientProvider));
+</span></span><span class="line" line="5"><span>});
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>final loginBlocProvider = Provider.autoDispose((ref) {
+</span></span><span class="line" line="8"><span>  return LoginBloc(ref.read(authRepoProvider));
+</span></span><span class="line" line="9"><span>});
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->3. Injectable + get_it（代码生成）：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>@injectable
+</span></span><span class="line" line="2"><span>class AuthRepositoryImpl implements AuthRepository {
+</span></span><span class="line" line="3"><span>  final ApiClient client;
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  @factoryMethod
+</span></span><span class="line" line="6"><span>  AuthRepositoryImpl(this.client);
+</span></span><span class="line" line="7"><span>}
+</span></span><span class="line" line="8"><span emptylineplaceholder="true">
+</span></span><span class="line" line="9"><span>// 自动生成注册代码
+</span></span><span class="line" line="10"><span>@InjectableInit()
+</span></span><span class="line" line="11"><span>void configureDependencies() =&gt; getIt.init();
+</span></span></code><!--]--></pre><hr><h2 id="_11-包管理与编译"><a href="#_11-包管理与编译"><!--[-->11. 包管理与编译<!--]--></a></h2><h3 id="q111-flutter-的编译模式有哪些debug-和-release-有什么区别"><a href="#q111-flutter-的编译模式有哪些debug-和-release-有什么区别"><!--[-->Q11.1: Flutter 的编译模式有哪些？Debug 和 Release 有什么区别？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->模式<!--]--></th><th><!--[-->编译方式<!--]--></th><th><!--[-->JIT<!--]--></th><th><!--[-->AOT<!--]--></th><th><!--[-->特点<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->Debug<!--]--></td><td><!--[-->Kernel JIT<!--]--></td><td><!--[-->✅<!--]--></td><td><!--[-->❌<!--]--></td><td><!--[-->Hot Reload、断言启用、性能差<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Profile<!--]--></td><td><!--[-->AOT<!--]--></td><td><!--[-->❌<!--]--></td><td><!--[-->✅<!--]--></td><td><!--[-->性能分析、DevTools 可用<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Release<!--]--></td><td><!--[-->AOT<!--]--></td><td><!--[-->❌<!--]--></td><td><!--[-->✅<!--]--></td><td><!--[-->最高性能、无调试信息、Tree Shaking<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><p><!--[--><strong><!--[-->关键区别：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 条件编译
+</span></span><span class="line" line="2"><span>if (kDebugMode) {
+</span></span><span class="line" line="3"><span>  print(&#39;Debug only log&#39;);
+</span></span><span class="line" line="4"><span>}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>if (kReleaseMode) {
+</span></span><span class="line" line="7"><span>  // Release 专有逻辑
+</span></span><span class="line" line="8"><span>}
+</span></span><span class="line" line="9"><span emptylineplaceholder="true">
+</span></span><span class="line" line="10"><span>// assert 只在 Debug 模式执行
+</span></span><span class="line" line="11"><span>assert(value != null, &#39;Value should not be null&#39;);
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->Tree Shaking：<!--]--></strong> Release 模式下，编译器会移除未使用的代码，减小包体积。<!--]--></p><p><!--[--><strong><!--[-->Hot Reload vs Hot Restart：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->Hot Reload：保持应用状态，只更新修改的代码（亚秒级）<!--]--></li><li><!--[-->Hot Restart：重置应用状态，重新执行 <code><!--[-->main()<!--]--></code><!--]--></li><!--]--></ul><hr><h3 id="q112-如何减小-flutter-应用的包体积"><a href="#q112-如何减小-flutter-应用的包体积"><!--[-->Q11.2: 如何减小 Flutter 应用的包体积？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-bash shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj"># 1. 分析包体积
+</span></span><span class="line" line="2"><span class="sScJk">flutter</span><span class="sZZnC"> build</span><span class="sZZnC"> apk</span><span class="sj4cs"> --analyze-size
+</span></span><span class="line" line="3"><span class="sScJk">flutter</span><span class="sZZnC"> build</span><span class="sZZnC"> ios</span><span class="sj4cs"> --analyze-size
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->关键策略：<!--]--></strong><!--]--></p><pre class="language-yaml shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj"># 2. 使用 --split-debug-info 分离调试信息
+</span></span><span class="line" line="2"><span class="sJ8bj"># flutter build apk --split-debug-info=debug-info/
+</span></span><span class="line" line="3"><span emptylineplaceholder="true">
+</span></span><span class="line" line="4"><span class="sJ8bj"># 3. 启用混淆
+</span></span><span class="line" line="5"><span class="sJ8bj"># flutter build apk --obfuscate --split-debug-info=debug-info/
+</span></span></code><!--]--></pre><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 4. 按需加载资源
+</span></span><span class="line" line="2"><span>// pubspec.yaml 中只声明需要的资源
+</span></span><span class="line" line="3"><span>flutter:
+</span></span><span class="line" line="4"><span>  assets:
+</span></span><span class="line" line="5"><span>    - assets/images/   # 不要包含不需要的大图
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>// 5. 使用 deferred loading（延迟加载）
+</span></span><span class="line" line="8"><span>import &#39;package:my_app/heavy_feature.dart&#39; deferred as heavy;
+</span></span><span class="line" line="9"><span emptylineplaceholder="true">
+</span></span><span class="line" line="10"><span>Future&lt;void&gt; loadFeature() async {
+</span></span><span class="line" line="11"><span>  await heavy.loadLibrary();
+</span></span><span class="line" line="12"><span>  heavy.showFeature();
+</span></span><span class="line" line="13"><span>}
+</span></span></code><!--]--></pre><pre class="language-yaml shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj"># 6. 精简依赖，移除不使用的包
+</span></span><span class="line" line="2"><span class="s9eBZ">dependencies</span><span class="sVt8B">:
+</span></span><span class="line" line="3"><span class="sJ8bj">  # 定期检查是否所有依赖都在使用
+</span></span></code><!--]--></pre><pre class="language-text"><!--[--><code># 7. 使用 App Bundle（Android）
+flutter build appbundle  # 比 APK 小约 20%
+</code><!--]--></pre><hr><h2 id="_12-实战场景题"><a href="#_12-实战场景题"><!--[-->12. 实战场景题<!--]--></a></h2><h3 id="q121-如何实现一个无限滚动列表并处理加载状态和错误状态"><a href="#q121-如何实现一个无限滚动列表并处理加载状态和错误状态"><!--[-->Q12.1: 如何实现一个无限滚动列表，并处理加载状态和错误状态？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>class InfiniteListPage extends StatefulWidget {
+</span></span><span class="line" line="2"><span>  @override
+</span></span><span class="line" line="3"><span>  State&lt;InfiniteListPage&gt; createState() =&gt; _InfiniteListPageState();
+</span></span><span class="line" line="4"><span>}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>class _InfiniteListPageState extends State&lt;InfiniteListPage&gt; {
+</span></span><span class="line" line="7"><span>  final _scrollController = ScrollController();
+</span></span><span class="line" line="8"><span>  final List&lt;Item&gt; _items = [];
+</span></span><span class="line" line="9"><span>  bool _isLoading = false;
+</span></span><span class="line" line="10"><span>  bool _hasMore = true;
+</span></span><span class="line" line="11"><span>  String? _error;
+</span></span><span class="line" line="12"><span>  int _page = 1;
+</span></span><span class="line" line="13"><span emptylineplaceholder="true">
+</span></span><span class="line" line="14"><span>  @override
+</span></span><span class="line" line="15"><span>  void initState() {
+</span></span><span class="line" line="16"><span>    super.initState();
+</span></span><span class="line" line="17"><span>    _loadMore();
+</span></span><span class="line" line="18"><span>    _scrollController.addListener(_onScroll);
+</span></span><span class="line" line="19"><span>  }
+</span></span><span class="line" line="20"><span emptylineplaceholder="true">
+</span></span><span class="line" line="21"><span>  void _onScroll() {
+</span></span><span class="line" line="22"><span>    if (_scrollController.position.pixels &gt;=
+</span></span><span class="line" line="23"><span>        _scrollController.position.maxScrollExtent - 200) {
+</span></span><span class="line" line="24"><span>      _loadMore();
+</span></span><span class="line" line="25"><span>    }
+</span></span><span class="line" line="26"><span>  }
+</span></span><span class="line" line="27"><span emptylineplaceholder="true">
+</span></span><span class="line" line="28"><span>  Future&lt;void&gt; _loadMore() async {
+</span></span><span class="line" line="29"><span>    if (_isLoading || !_hasMore) return;
+</span></span><span class="line" line="30"><span emptylineplaceholder="true">
+</span></span><span class="line" line="31"><span>    setState(() {
+</span></span><span class="line" line="32"><span>      _isLoading = true;
+</span></span><span class="line" line="33"><span>      _error = null;
+</span></span><span class="line" line="34"><span>    });
+</span></span><span class="line" line="35"><span emptylineplaceholder="true">
+</span></span><span class="line" line="36"><span>    try {
+</span></span><span class="line" line="37"><span>      final newItems = await api.fetchItems(page: _page, limit: 20);
+</span></span><span class="line" line="38"><span>      setState(() {
+</span></span><span class="line" line="39"><span>        _items.addAll(newItems);
+</span></span><span class="line" line="40"><span>        _page++;
+</span></span><span class="line" line="41"><span>        _hasMore = newItems.length == 20;
+</span></span><span class="line" line="42"><span>        _isLoading = false;
+</span></span><span class="line" line="43"><span>      });
+</span></span><span class="line" line="44"><span>    } catch (e) {
+</span></span><span class="line" line="45"><span>      setState(() {
+</span></span><span class="line" line="46"><span>        _error = e.toString();
+</span></span><span class="line" line="47"><span>        _isLoading = false;
+</span></span><span class="line" line="48"><span>      });
+</span></span><span class="line" line="49"><span>    }
+</span></span><span class="line" line="50"><span>  }
+</span></span><span class="line" line="51"><span emptylineplaceholder="true">
+</span></span><span class="line" line="52"><span>  @override
+</span></span><span class="line" line="53"><span>  Widget build(BuildContext context) {
+</span></span><span class="line" line="54"><span>    return RefreshIndicator(
+</span></span><span class="line" line="55"><span>      onRefresh: () async {
+</span></span><span class="line" line="56"><span>        _page = 1;
+</span></span><span class="line" line="57"><span>        _items.clear();
+</span></span><span class="line" line="58"><span>        _hasMore = true;
+</span></span><span class="line" line="59"><span>        await _loadMore();
+</span></span><span class="line" line="60"><span>      },
+</span></span><span class="line" line="61"><span>      child: ListView.builder(
+</span></span><span class="line" line="62"><span>        controller: _scrollController,
+</span></span><span class="line" line="63"><span>        itemCount: _items.length + (_hasMore ? 1 : 0),
+</span></span><span class="line" line="64"><span>        itemBuilder: (context, index) {
+</span></span><span class="line" line="65"><span>          if (index == _items.length) {
+</span></span><span class="line" line="66"><span>            if (_error != null) {
+</span></span><span class="line" line="67"><span>              return _ErrorTile(
+</span></span><span class="line" line="68"><span>                error: _error!,
+</span></span><span class="line" line="69"><span>                onRetry: _loadMore,
+</span></span><span class="line" line="70"><span>              );
+</span></span><span class="line" line="71"><span>            }
+</span></span><span class="line" line="72"><span>            return const Center(child: CircularProgressIndicator());
+</span></span><span class="line" line="73"><span>          }
+</span></span><span class="line" line="74"><span>          return ItemTile(item: _items[index]);
+</span></span><span class="line" line="75"><span>        },
+</span></span><span class="line" line="76"><span>      ),
+</span></span><span class="line" line="77"><span>    );
+</span></span><span class="line" line="78"><span>  }
+</span></span><span class="line" line="79"><span emptylineplaceholder="true">
+</span></span><span class="line" line="80"><span>  @override
+</span></span><span class="line" line="81"><span>  void dispose() {
+</span></span><span class="line" line="82"><span>    _scrollController.dispose();
+</span></span><span class="line" line="83"><span>    super.dispose();
+</span></span><span class="line" line="84"><span>  }
+</span></span><span class="line" line="85"><span>}
+</span></span></code><!--]--></pre><hr><h3 id="q122-如何处理-flutter-中的深层链接deep-linking"><a href="#q122-如何处理-flutter-中的深层链接deep-linking"><!--[-->Q12.2: 如何处理 Flutter 中的深层链接（Deep Linking）？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 使用 go_router 处理深层链接
+</span></span><span class="line" line="2"><span>final router = GoRouter(
+</span></span><span class="line" line="3"><span>  routes: [
+</span></span><span class="line" line="4"><span>    GoRoute(
+</span></span><span class="line" line="5"><span>      path: &#39;/&#39;,
+</span></span><span class="line" line="6"><span>      builder: (_, __) =&gt; HomePage(),
+</span></span><span class="line" line="7"><span>    ),
+</span></span><span class="line" line="8"><span>    GoRoute(
+</span></span><span class="line" line="9"><span>      path: &#39;/product/:id&#39;,
+</span></span><span class="line" line="10"><span>      builder: (_, state) {
+</span></span><span class="line" line="11"><span>        final id = state.pathParameters[&#39;id&#39;]!;
+</span></span><span class="line" line="12"><span>        return ProductPage(id: id);
+</span></span><span class="line" line="13"><span>      },
+</span></span><span class="line" line="14"><span>    ),
+</span></span><span class="line" line="15"><span>    GoRoute(
+</span></span><span class="line" line="16"><span>      path: &#39;/order/:orderId/tracking&#39;,
+</span></span><span class="line" line="17"><span>      builder: (_, state) {
+</span></span><span class="line" line="18"><span>        return TrackingPage(orderId: state.pathParameters[&#39;orderId&#39;]!);
+</span></span><span class="line" line="19"><span>      },
+</span></span><span class="line" line="20"><span>    ),
+</span></span><span class="line" line="21"><span>  ],
+</span></span><span class="line" line="22"><span>  // 认证守卫
+</span></span><span class="line" line="23"><span>  redirect: (context, state) {
+</span></span><span class="line" line="24"><span>    final isLoggedIn = ref.read(authProvider).isLoggedIn;
+</span></span><span class="line" line="25"><span>    final isLoginRoute = state.matchedLocation == &#39;/login&#39;;
+</span></span><span class="line" line="26"><span emptylineplaceholder="true">
+</span></span><span class="line" line="27"><span>    if (!isLoggedIn &amp;&amp; !isLoginRoute) return &#39;/login&#39;;
+</span></span><span class="line" line="28"><span>    if (isLoggedIn &amp;&amp; isLoginRoute) return &#39;/&#39;;
+</span></span><span class="line" line="29"><span>    return null;
+</span></span><span class="line" line="30"><span>  },
+</span></span><span class="line" line="31"><span>  // 错误页
+</span></span><span class="line" line="32"><span>  errorBuilder: (_, __) =&gt; NotFoundPage(),
+</span></span><span class="line" line="33"><span>);
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->平台配置：<!--]--></strong><!--]--></p><pre class="language-xml shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>&lt;!-- Android: AndroidManifest.xml --&gt;
+</span></span><span class="line" line="2"><span>&lt;intent-filter&gt;
+</span></span><span class="line" line="3"><span>  &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+</span></span><span class="line" line="4"><span>  &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+</span></span><span class="line" line="5"><span>  &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
+</span></span><span class="line" line="6"><span>  &lt;data android:scheme=&quot;https&quot; android:host=&quot;myapp.com&quot; /&gt;
+</span></span><span class="line" line="7"><span>&lt;/intent-filter&gt;
+</span></span></code><!--]--></pre><pre class="language-xml shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>&lt;!-- iOS: Info.plist + Associated Domains --&gt;
+</span></span><span class="line" line="2"><span>&lt;!-- 添加 applinks:myapp.com 到 Associated Domains --&gt;
+</span></span></code><!--]--></pre><hr><h3 id="q123-如何实现多主题dark-mode支持"><a href="#q123-如何实现多主题dark-mode支持"><!--[-->Q12.3: 如何实现多主题（Dark Mode）支持？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 1. 定义主题
+</span></span><span class="line" line="2"><span>class AppTheme {
+</span></span><span class="line" line="3"><span>  static ThemeData light = ThemeData(
+</span></span><span class="line" line="4"><span>    brightness: Brightness.light,
+</span></span><span class="line" line="5"><span>    colorScheme: ColorScheme.fromSeed(
+</span></span><span class="line" line="6"><span>      seedColor: Colors.blue,
+</span></span><span class="line" line="7"><span>      brightness: Brightness.light,
+</span></span><span class="line" line="8"><span>    ),
+</span></span><span class="line" line="9"><span>    textTheme: _textTheme,
+</span></span><span class="line" line="10"><span>    appBarTheme: const AppBarTheme(elevation: 0),
+</span></span><span class="line" line="11"><span>  );
+</span></span><span class="line" line="12"><span emptylineplaceholder="true">
+</span></span><span class="line" line="13"><span>  static ThemeData dark = ThemeData(
+</span></span><span class="line" line="14"><span>    brightness: Brightness.dark,
+</span></span><span class="line" line="15"><span>    colorScheme: ColorScheme.fromSeed(
+</span></span><span class="line" line="16"><span>      seedColor: Colors.blue,
+</span></span><span class="line" line="17"><span>      brightness: Brightness.dark,
+</span></span><span class="line" line="18"><span>    ),
+</span></span><span class="line" line="19"><span>    textTheme: _textTheme,
+</span></span><span class="line" line="20"><span>  );
+</span></span><span class="line" line="21"><span emptylineplaceholder="true">
+</span></span><span class="line" line="22"><span>  static const _textTheme = TextTheme(
+</span></span><span class="line" line="23"><span>    headlineLarge: TextStyle(fontWeight: FontWeight.bold),
+</span></span><span class="line" line="24"><span>  );
+</span></span><span class="line" line="25"><span>}
+</span></span><span class="line" line="26"><span emptylineplaceholder="true">
+</span></span><span class="line" line="27"><span>// 2. 使用 Riverpod 管理主题状态
+</span></span><span class="line" line="28"><span>final themeModeProvider = StateProvider&lt;ThemeMode&gt;((ref) =&gt; ThemeMode.system);
+</span></span><span class="line" line="29"><span emptylineplaceholder="true">
+</span></span><span class="line" line="30"><span>// 3. 应用主题
+</span></span><span class="line" line="31"><span>class MyApp extends ConsumerWidget {
+</span></span><span class="line" line="32"><span>  @override
+</span></span><span class="line" line="33"><span>  Widget build(BuildContext context, WidgetRef ref) {
+</span></span><span class="line" line="34"><span>    final themeMode = ref.watch(themeModeProvider);
+</span></span><span class="line" line="35"><span>    return MaterialApp(
+</span></span><span class="line" line="36"><span>      theme: AppTheme.light,
+</span></span><span class="line" line="37"><span>      darkTheme: AppTheme.dark,
+</span></span><span class="line" line="38"><span>      themeMode: themeMode,
+</span></span><span class="line" line="39"><span>      home: HomePage(),
+</span></span><span class="line" line="40"><span>    );
+</span></span><span class="line" line="41"><span>  }
+</span></span><span class="line" line="42"><span>}
+</span></span><span class="line" line="43"><span emptylineplaceholder="true">
+</span></span><span class="line" line="44"><span>// 4. 在 Widget 中使用语义化颜色
+</span></span><span class="line" line="45"><span>Container(
+</span></span><span class="line" line="46"><span>  color: Theme.of(context).colorScheme.surface,
+</span></span><span class="line" line="47"><span>  child: Text(
+</span></span><span class="line" line="48"><span>    &#39;Hello&#39;,
+</span></span><span class="line" line="49"><span>    style: Theme.of(context).textTheme.headlineLarge,
+</span></span><span class="line" line="50"><span>  ),
+</span></span><span class="line" line="51"><span>)
+</span></span><span class="line" line="52"><span emptylineplaceholder="true">
+</span></span><span class="line" line="53"><span>// 5. 自定义扩展（超出 Theme 范围的颜色）
+</span></span><span class="line" line="54"><span>extension CustomColors on ThemeData {
+</span></span><span class="line" line="55"><span>  Color get successColor =&gt;
+</span></span><span class="line" line="56"><span>      brightness == Brightness.light ? Colors.green : Colors.greenAccent;
+</span></span><span class="line" line="57"><span>}
+</span></span></code><!--]--></pre><hr><h3 id="q124-如何做-flutter-应用的国际化i18n"><a href="#q124-如何做-flutter-应用的国际化i18n"><!--[-->Q12.4: 如何做 Flutter 应用的国际化（i18n）？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><pre class="language-yaml shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj"># pubspec.yaml
+</span></span><span class="line" line="2"><span class="s9eBZ">dependencies</span><span class="sVt8B">:
+</span></span><span class="line" line="3"><span class="s9eBZ">  flutter_localizations</span><span class="sVt8B">:
+</span></span><span class="line" line="4"><span class="s9eBZ">    sdk</span><span class="sVt8B">: </span><span class="sZZnC">flutter
+</span></span><span class="line" line="5"><span class="s9eBZ">  intl</span><span class="sVt8B">: </span><span class="sZZnC">any
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span class="s9eBZ">flutter</span><span class="sVt8B">:
+</span></span><span class="line" line="8"><span class="s9eBZ">  generate</span><span class="sVt8B">: </span><span class="sj4cs">true
+</span></span></code><!--]--></pre><pre class="language-yaml shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj"># l10n.yaml
+</span></span><span class="line" line="2"><span class="s9eBZ">arb-dir</span><span class="sVt8B">: </span><span class="sZZnC">lib/l10n
+</span></span><span class="line" line="3"><span class="s9eBZ">template-arb-file</span><span class="sVt8B">: </span><span class="sZZnC">app_en.arb
+</span></span><span class="line" line="4"><span class="s9eBZ">output-localization-file</span><span class="sVt8B">: </span><span class="sZZnC">app_localizations.dart
+</span></span></code><!--]--></pre><pre class="language-json shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj">// lib/l10n/app_en.arb
+</span></span><span class="line" line="2"><span class="sVt8B">{
+</span></span><span class="line" line="3"><span class="sj4cs">  &quot;@@locale&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;en&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="4"><span class="sj4cs">  &quot;appTitle&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;My App&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="5"><span class="sj4cs">  &quot;greeting&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;Hello, {name}!&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="6"><span class="sj4cs">  &quot;@greeting&quot;</span><span class="sVt8B">: {
+</span></span><span class="line" line="7"><span class="sj4cs">    &quot;placeholders&quot;</span><span class="sVt8B">: {
+</span></span><span class="line" line="8"><span class="sj4cs">      &quot;name&quot;</span><span class="sVt8B">: { </span><span class="sj4cs">&quot;type&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;String&quot;</span><span class="sVt8B"> }
+</span></span><span class="line" line="9"><span class="sVt8B">    }
+</span></span><span class="line" line="10"><span class="sVt8B">  },
+</span></span><span class="line" line="11"><span class="sj4cs">  &quot;itemCount&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;{count, plural, =0{No items} =1{1 item} other{{count} items}}&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="12"><span class="sj4cs">  &quot;@itemCount&quot;</span><span class="sVt8B">: {
+</span></span><span class="line" line="13"><span class="sj4cs">    &quot;placeholders&quot;</span><span class="sVt8B">: {
+</span></span><span class="line" line="14"><span class="sj4cs">      &quot;count&quot;</span><span class="sVt8B">: { </span><span class="sj4cs">&quot;type&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;int&quot;</span><span class="sVt8B"> }
+</span></span><span class="line" line="15"><span class="sVt8B">    }
+</span></span><span class="line" line="16"><span class="sVt8B">  }
+</span></span><span class="line" line="17"><span class="sVt8B">}
+</span></span></code><!--]--></pre><pre class="language-json shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span class="sJ8bj">// lib/l10n/app_zh.arb
+</span></span><span class="line" line="2"><span class="sVt8B">{
+</span></span><span class="line" line="3"><span class="sj4cs">  &quot;@@locale&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;zh&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="4"><span class="sj4cs">  &quot;appTitle&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;我的应用&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="5"><span class="sj4cs">  &quot;greeting&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;你好, {name}!&quot;</span><span class="sVt8B">,
+</span></span><span class="line" line="6"><span class="sj4cs">  &quot;itemCount&quot;</span><span class="sVt8B">: </span><span class="sZZnC">&quot;{count, plural, =0{没有项目} other{{count} 个项目}}&quot;
+</span></span><span class="line" line="7"><span class="sVt8B">}
+</span></span></code><!--]--></pre><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// 配置
+</span></span><span class="line" line="2"><span>MaterialApp(
+</span></span><span class="line" line="3"><span>  localizationsDelegates: AppLocalizations.localizationsDelegates,
+</span></span><span class="line" line="4"><span>  supportedLocales: AppLocalizations.supportedLocales,
+</span></span><span class="line" line="5"><span>)
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>// 使用
+</span></span><span class="line" line="8"><span>Text(AppLocalizations.of(context)!.greeting(&#39;Flutter&#39;))
+</span></span><span class="line" line="9"><span>Text(AppLocalizations.of(context)!.itemCount(5))
+</span></span></code><!--]--></pre><hr><h3 id="q125-如何处理-flutter-中的内存泄漏"><a href="#q125-如何处理-flutter-中的内存泄漏"><!--[-->Q12.5: 如何处理 Flutter 中的内存泄漏？<!--]--></a></h3><p><!--[--><strong><!--[-->答：<!--]--></strong><!--]--></p><p><!--[--><strong><!--[-->常见内存泄漏场景及解决方案：<!--]--></strong><!--]--></p><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 泄漏 1：未取消的 Stream 订阅
+</span></span><span class="line" line="2"><span>class _MyState extends State&lt;MyWidget&gt; {
+</span></span><span class="line" line="3"><span>  late StreamSubscription _sub;
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  @override
+</span></span><span class="line" line="6"><span>  void initState() {
+</span></span><span class="line" line="7"><span>    super.initState();
+</span></span><span class="line" line="8"><span>    _sub = stream.listen((data) =&gt; setState(() {}));
+</span></span><span class="line" line="9"><span>  }
+</span></span><span class="line" line="10"><span emptylineplaceholder="true">
+</span></span><span class="line" line="11"><span>  // ❌ 忘记取消订阅
+</span></span><span class="line" line="12"><span>}
+</span></span><span class="line" line="13"><span emptylineplaceholder="true">
+</span></span><span class="line" line="14"><span>// ✅ 修复：在 dispose 中取消
+</span></span><span class="line" line="15"><span>@override
+</span></span><span class="line" line="16"><span>void dispose() {
+</span></span><span class="line" line="17"><span>  _sub.cancel();
+</span></span><span class="line" line="18"><span>  super.dispose();
+</span></span><span class="line" line="19"><span>}
+</span></span></code><!--]--></pre><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 泄漏 2：闭包持有 BuildContext 或 State
+</span></span><span class="line" line="2"><span>void _fetchData() async {
+</span></span><span class="line" line="3"><span>  final data = await api.getData();
+</span></span><span class="line" line="4"><span>  // 此时 Widget 可能已经被销毁
+</span></span><span class="line" line="5"><span>  setState(() { _data = data; }); // 可能报错或泄漏
+</span></span><span class="line" line="6"><span>}
+</span></span><span class="line" line="7"><span emptylineplaceholder="true">
+</span></span><span class="line" line="8"><span>// ✅ 修复：检查 mounted
+</span></span><span class="line" line="9"><span>void _fetchData() async {
+</span></span><span class="line" line="10"><span>  final data = await api.getData();
+</span></span><span class="line" line="11"><span>  if (!mounted) return; // Widget 已销毁，直接返回
+</span></span><span class="line" line="12"><span>  setState(() { _data = data; });
+</span></span><span class="line" line="13"><span>}
+</span></span></code><!--]--></pre><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 泄漏 3：AnimationController 未释放
+</span></span><span class="line" line="2"><span>class _MyState extends State&lt;MyWidget&gt; with TickerProviderStateMixin {
+</span></span><span class="line" line="3"><span>  late final controller = AnimationController(vsync: this);
+</span></span><span class="line" line="4"><span emptylineplaceholder="true">
+</span></span><span class="line" line="5"><span>  // ❌ 忘记 dispose
+</span></span><span class="line" line="6"><span emptylineplaceholder="true">
+</span></span><span class="line" line="7"><span>  // ✅ 修复
+</span></span><span class="line" line="8"><span>  @override
+</span></span><span class="line" line="9"><span>  void dispose() {
+</span></span><span class="line" line="10"><span>    controller.dispose();
+</span></span><span class="line" line="11"><span>    super.dispose();
+</span></span><span class="line" line="12"><span>  }
+</span></span><span class="line" line="13"><span>}
+</span></span></code><!--]--></pre><pre class="language-dart shiki shiki-themes github-light github-dark" style=""><!--[--><code><span class="line" line="1"><span>// ❌ 泄漏 4：全局/静态引用持有 Widget
+</span></span><span class="line" line="2"><span>class Cache {
+</span></span><span class="line" line="3"><span>  static Widget? lastWidget; // 永远不会被 GC
+</span></span><span class="line" line="4"><span>}
+</span></span><span class="line" line="5"><span emptylineplaceholder="true">
+</span></span><span class="line" line="6"><span>// ✅ 修复：避免静态引用 Widget/State/BuildContext
+</span></span></code><!--]--></pre><p><!--[--><strong><!--[-->检测工具：<!--]--></strong><!--]--></p><ul><!--[--><li><!--[-->DevTools Memory 面板：查看对象分配和 GC<!--]--></li><li><!--[--><code><!--[-->dart:developer<!--]--></code> 的 <code><!--[-->Service.getMemoryUsage()<!--]--></code><!--]--></li><li><!--[-->LeakTracking（Flutter 3.18+）：自动检测某些类型的泄漏<!--]--></li><!--]--></ul><hr><h2 id="附录高频考察知识点速查"><a href="#附录高频考察知识点速查"><!--[-->附录：高频考察知识点速查<!--]--></a></h2><table><!--[--><thead><!--[--><tr><!--[--><th><!--[-->主题<!--]--></th><th><!--[-->关键词<!--]--></th><!--]--></tr><!--]--></thead><tbody><!--[--><tr><!--[--><td><!--[-->渲染<!--]--></td><td><!--[-->三棵树、Constraints go down / Sizes go up、RepaintBoundary、Impeller<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->状态管理<!--]--></td><td><!--[-->InheritedWidget 原理、BLoC vs Riverpod、setState 粒度<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->性能<!--]--></td><td><!--[-->const Widget、ListView.builder、AnimatedBuilder child、Isolate<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->异步<!--]--></td><td><!--[-->Event Loop、Microtask vs Event Queue、Stream vs Future、Isolate<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->平台通信<!--]--></td><td><!--[-->MethodChannel、EventChannel、FFI<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->测试<!--]--></td><td><!--[-->Widget Test、pumpAndSettle、Golden Test、Mock<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->架构<!--]--></td><td><!--[-->Clean Architecture、MVVM、依赖注入<!--]--></td><!--]--></tr><tr><!--[--><td><!--[-->Dart 语言<!--]--></td><td><!--[-->Null Safety、Mixin、Sealed Class、Extension、泛型协变<!--]--></td><!--]--></tr><!--]--></tbody><!--]--></table><style>html .default .shiki span {color: var(--shiki-default);background: var(--shiki-default-bg);font-style: var(--shiki-default-font-style);font-weight: var(--shiki-default-font-weight);text-decoration: var(--shiki-default-text-decoration);}html .shiki span {color: var(--shiki-default);background: var(--shiki-default-bg);font-style: var(--shiki-default-font-style);font-weight: var(--shiki-default-font-weight);text-decoration: var(--shiki-default-text-decoration);}html .dark .shiki span {color: var(--shiki-dark);background: var(--shiki-dark-bg);font-style: var(--shiki-dark-font-style);font-weight: var(--shiki-dark-font-weight);text-decoration: var(--shiki-dark-text-decoration);}html.dark .shiki span {color: var(--shiki-dark);background: var(--shiki-dark-bg);font-style: var(--shiki-dark-font-style);font-weight: var(--shiki-dark-font-weight);text-decoration: var(--shiki-dark-text-decoration);}html pre.shiki code .sJ8bj, html code.shiki .sJ8bj{--shiki-default:#6A737D;--shiki-dark:#6A737D}html pre.shiki code .sVt8B, html code.shiki .sVt8B{--shiki-default:#24292E;--shiki-dark:#E1E4E8}html pre.shiki code .sj4cs, html code.shiki .sj4cs{--shiki-default:#005CC5;--shiki-dark:#79B8FF}html pre.shiki code .sZZnC, html code.shiki .sZZnC{--shiki-default:#032F62;--shiki-dark:#9ECBFF}html pre.shiki code .sScJk, html code.shiki .sScJk{--shiki-default:#6F42C1;--shiki-dark:#B392F0}html pre.shiki code .s9eBZ, html code.shiki .s9eBZ{--shiki-default:#22863A;--shiki-dark:#85E89D}</style></div><!--]--></div><aside class="article-toc" aria-label="文章目录" data-v-bf7ffeeb><p data-v-bf7ffeeb>目录</p><nav data-v-bf7ffeeb><!--[--><a href="#目录" data-v-bf7ffeeb>目录</a><a href="#_1-dart-语言基础" data-v-bf7ffeeb>1. Dart 语言基础</a><a href="#_2-flutter-渲染机制" data-v-bf7ffeeb>2. Flutter 渲染机制</a><a href="#_3-widget-element-renderobject" data-v-bf7ffeeb>3. Widget / Element / RenderObject</a><a href="#_4-状态管理" data-v-bf7ffeeb>4. 状态管理</a><a href="#_5-异步编程" data-v-bf7ffeeb>5. 异步编程</a><a href="#_6-性能优化" data-v-bf7ffeeb>6. 性能优化</a><a href="#_7-平台通信platform-channel" data-v-bf7ffeeb>7. 平台通信（Platform Channel）</a><a href="#_8-路由与导航" data-v-bf7ffeeb>8. 路由与导航</a><a href="#_9-测试" data-v-bf7ffeeb>9. 测试</a><a href="#_10-架构设计" data-v-bf7ffeeb>10. 架构设计</a><a href="#_11-包管理与编译" data-v-bf7ffeeb>11. 包管理与编译</a><a href="#_12-实战场景题" data-v-bf7ffeeb>12. 实战场景题</a><a href="#附录高频考察知识点速查" data-v-bf7ffeeb>附录：高频考察知识点速查</a><!--]--></nav></aside></div></article><!--]--></main><footer class="footer" data-v-24a97cac data-v-51f18da3><div class="footer-inner" data-v-51f18da3><span class="footer-brand" data-v-51f18da3>思维模型</span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-v-51f18da3>浙ICP备17053536号-2</a></div></footer></div></div><div id="teleports"></div><script>window.__NUXT__={};window.__NUXT__.config={public:{siteUrl:"https://munger-models.example.com",mdc:{components:{prose:true,map:{},customElements:[]},headings:{anchorLinks:{h1:false,h2:true,h3:true,h4:true,h5:false,h6:false}},highlight:{noApiRoute:true,highlighter:"shiki",theme:{default:"github-light",dark:"github-dark"},shikiEngine:"oniguruma",langs:["js","jsx","json","ts","tsx","vue","css","html","bash","md","mdc","yaml"]}},content:{wsUrl:""}},app:{baseURL:"/",buildId:"3ee88db9-ac7d-44b5-af4c-b534c59dcbfe",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/notes/flutter-interview/_payload.json?3ee88db9-ac7d-44b5-af4c-b534c59dcbfe">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"prerenderedAt":8},["Reactive",2],{},["Set"],["ShallowReactive",5],{"notes-flutter-interview":-1},true,"\u002Fnotes\u002Fflutter-interview",1778291670668]</script></body></html>
