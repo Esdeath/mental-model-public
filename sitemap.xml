@@ -456,6 +456,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://munger-models.example.com/notes/seo-completion-and-generate-hook</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://munger-models.example.com/library/duanyongping-shangyeluoji-di1jie-weidaqiye</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -1,1 +1,0 @@
-import{_ as o,o as s,f as r,v as n}from"./mM8iU028.js";const t={};function a(e,c){return s(),r("ol",null,[n(e.$slots,"default")])}const _=Object.assign(o(t,[["render",a]]),{__name:"ProseOl"});export{_ as default};

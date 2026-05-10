@@ -1,0 +1,1 @@
+import{_ as s,o,f as r,x as n}from"./BIcs97y7.js";const t={};function a(e,c){return o(),r("ul",null,[n(e.$slots,"default")])}const _=Object.assign(s(t,[["render",a]]),{__name:"ProseUl"});export{_ as default};
